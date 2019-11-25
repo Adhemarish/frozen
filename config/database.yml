@@ -80,6 +80,4 @@ test:
 #
 production:
   <<: *default
-  database: frozen_production
-  username: frozen
-  password: <%= ENV['FROZEN_DATABASE_PASSWORD'] %>
+  url: <%= ENV['POSTGRESQL_ADDON_URI'] %>
