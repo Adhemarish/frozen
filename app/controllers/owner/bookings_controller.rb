@@ -4,8 +4,18 @@ class Owner::BookingsController < ApplicationController
   end
 
   def accept
+    @booking = Booking.find(params[:id])
+    @booking.status = "accepted"
+    if @booking.save
+      redirect_to owner_bookings_path
+    end
   end
 
   def decline
+    @booking = Booking.find(params[:id])
+    @booking.status = "refused"
+    if @booking.save
+      redirect_to owner_bookings_path
+    end
   end
 end
