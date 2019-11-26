@@ -1,0 +1,27 @@
+<div class="container">
+  <h1>Your bookings</h1>
+
+  <table class="table">
+    <thead class="thead-light">
+      <tr>
+        <th scope="col">Photo</th>
+        <th scope="col">Locataire</th>
+        <th scope="col">Date début</th>
+        <th scope="col">Date fin</th>
+        <th scope="col">Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <%  @bookings.each do |booking| %>
+          <th scope="row">booking.equipment.picture</th>
+          <td>booking.equipment.title</td>
+          <td>booking.user.name</td>
+          <td>booking.starting_date</td>
+          <td>booking.ending_date</td>
+          <td>booking.status</td>
+        <% end %>
+      </tr>
+    </tbody>
+  </table>
+</div>
