@@ -1,0 +1,26 @@
+.banner {
+  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url("banner.jpg");
+  height: 50vh;
+  background-size: cover;
+  background-position: center;
+  color: white;
+  margin: 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-banner {
+  margin: 5px;
+  border-radius: 5px;
+  background-color: #b8d0eb;
+  color: #6f2dbd;
+  border: solid 2px #6f2dbd;
+  &:hover {
+    background-color: #6f2dbd;
+    color: #b8d0eb;
+    border: solid 2px #b8d0eb;
+    transform: scale(1.1);
+  }
+}
