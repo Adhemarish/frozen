@@ -1,0 +1,38 @@
+<h2>Ajouter un équipement à louer</h2>
+
+<%= simple_form_for @equipment, url: owner_equipments_path do |f| %>
+
+  <div class="form-inputs">
+    <%= f.input :title,
+                label: 'Titre',
+                placeholder: 'Boots snowboard taille 38',
+                required: true,
+                autofocus: true %>
+    <%= f.input :details,
+                placeholder: "Décrivez l'objet",
+                required: true,
+                autofocus: true %>
+    <%= f.input :material_category,
+                collection: Equipment::CATEGORY,
+                label: 'Catégories',
+                required: true %>
+    <%= f.input :location,
+                label: 'Localisation',
+                placeholder: 'Lyon, Grenoble, ...',
+                required: true %>
+    <%= f.input :picture,
+                label: "Photo de l'équipement",
+                required: true %>
+    <%= f.input :picture_cache, as: :hidden %>
+    <%= f.input :price_per_day,
+                label: 'Prix de location par jour',
+                placeholder: '75',
+                required: true %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, "Ajouter votre équipement"%>
+  </div>
+<% end %>
+
+<form action="/"></form>
