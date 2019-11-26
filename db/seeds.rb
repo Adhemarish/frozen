@@ -58,5 +58,7 @@ k = Equipment.new(owner: User.all.sample, title: "Chaussures de ski taille 39", 
 k.picture = 'https://contents.mediadecathlon.com/p1706345/k$ad7b7dbc0c7f706bcf9071914abc4235/sq/Chaussures+de+ski+freeride+Rossignol+Alltrack+90.jpg'
 k.save!
 
+résa = Booking.new(equipment: b, starting_date: 12-12-2019, ending_date: 19-12-2019, user: 'faten')
+
 puts "Finished !"
 

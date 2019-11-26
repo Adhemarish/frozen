@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 2019_11_25_155900) do
     t.text "details"
     t.string "material_category"
     t.string "location"
-    t.string "picture"
+    t.string "picture",
     t.integer "price_per_day"
     t.bigint "owner_id"
     t.datetime "created_at", null: false
