@@ -8,13 +8,10 @@ class User < ApplicationRecord
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-  
-  mount_uploader :avatar, PhotoUploader
 
   validates :name, presence: true
   validates :email, presence: true, uniqueness: true
   validates :password, presence: true, length: { minimum: 6 }
-  
 end
 
 # current_user.equipment
