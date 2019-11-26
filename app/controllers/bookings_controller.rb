@@ -1,5 +1,6 @@
 class BookingsController < ApplicationController
   def index
+    @bookings = Booking.where(user: current_user)
   end
 
   def new
@@ -12,22 +13,18 @@ class BookingsController < ApplicationController
     @booking.equipment = @equipment
     @booking.user = current_user
 
-    @booking.total_price = (@booking.ending_date - @booking.starting_date).to_i * @equipment.price_per_day
+    @booking.total_price = (@booking.ending_date - @booking.starting_date + 1).to_i * @equipment.price_per_day
 
     if @booking.save
-      # logger.debug "#{@booking.total_price}"
-      redirect_to root_path
+      redirect_to equipment_path(@equipment)
     else
       render template: "equipments/show"
     end
-
-    # logger.debug "#{@booking.equipment}, #{@booking.user}, #{@booking.owner}"
-    # redirect_to root_path
   end
 
   private
 
   def booking_params
-    params.require(:booking).permit(:starting_date, :ending_date)
+    params.require(:booking).permit(:starting_date, :ending_date, :total_price)
   end
 end

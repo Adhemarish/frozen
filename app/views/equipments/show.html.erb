@@ -8,12 +8,10 @@
           <%= image_tag @equipment.picture, size: '300x300' %>
           <div class="card-text">
             <div class="list-group">
-              <li><%= @equipment.title %></li>
-              <li>Ou louer? <%= @equipment.location %></li>
-              <li><%= @equipment.material_category %></li>
-              <li><%= @equipment.details %></li>
-              <li>Prix: <%= @equipment.price_per_day %>Eur / jour</li>
-              <li><%= @booking.total_price if @booking.total_price %></li>
+              <div class="list-group-item">Ou louer? <%= @equipment.location %></div>
+              <div class="list-group-item">Prix: <%= @equipment.price_per_day %>Eur / jour</div>
+              <div class="list-group-item"><%= @equipment.material_category %></div>
+              <div class="list-group-item"><%= @equipment.details %></div>
             </div>
           </div>
         </div>
