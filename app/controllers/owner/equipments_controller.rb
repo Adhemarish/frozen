@@ -17,6 +17,11 @@ class Owner::EquipmentsController < ApplicationController
     end
   end
 
+  def show
+    @equipment = Equipment.find(params[:id])
+    @booking = Booking.new
+  end
+
   private
 
   def equipment_params
