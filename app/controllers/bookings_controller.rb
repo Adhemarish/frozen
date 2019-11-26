@@ -16,10 +16,16 @@ class BookingsController < ApplicationController
     @booking.total_price = (@booking.ending_date - @booking.starting_date + 1).to_i * @equipment.price_per_day
 
     if @booking.save
-      redirect_to equipment_path(@equipment)
+      redirect_to '/bookings'
     else
       render template: "equipments/show"
     end
+  end
+
+  def destroy
+    @booking = Booking.find(params[:id])
+    @booking.destroy
+    redirect_to '/bookings'
   end
 
   private
