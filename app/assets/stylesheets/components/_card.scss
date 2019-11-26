@@ -1,1 +1,39 @@
+.home-equipment-card {
+  margin: 10px auto;
+  align-items: center;
+  justify-content: center;
+  height: 30vh;
+  width: 100vw;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  .row.no-gutters {
+    justify-content: center;
+  }
+  .col-4 {
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  a {
+    color: #6f2dbd;
+  }
+  .card-title {
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: Frozito;
+  }
+  .bottom-part {
+    justify-content: space-between;
+    border-top: solid 1px #b8d0eb;
+    padding-top: 5px;
+    font-family: Frozito;
+  }
+  .card-price {
+    font-weight: bold;
+    color: #b298dc;
+  }
+}
+
 
