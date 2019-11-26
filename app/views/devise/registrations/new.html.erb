@@ -6,12 +6,12 @@
   <div class="form-inputs">
     <%= f.input :name,
                 label: 'Entrez votre nom complet',
-                placeholder: 'Ludovic Lhuillier',
+                placeholder: '0laf Frozen',
                 required: true,
                 autofocus: true,
                 input_html: { autocomplete: "name" }%>
     <%= f.input :email,
-                placeholder: 'ludovic@frozen.com',
+                placeholder: 'olaf@frozen.com',
                 required: true,
                 autofocus: true,
                 input_html: { autocomplete: "email" }%>
@@ -20,6 +20,10 @@
                 required: true,
                 hint: ("#{@minimum_password_length} caractères minimum" if @minimum_password_length),
                 input_html: { autocomplete: "new-password" } %>
+    <%= f.input :avatar,
+                label: "Photo de votre avatar",
+                required: true %>
+    <%= f.input :avatar_cache, as: :hidden %>
     <%= f.input :password_confirmation,
                 label: 'Confirmez votre mot de passe',
                 required: true,

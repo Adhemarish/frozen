@@ -1,0 +1,32 @@
+<div class="container container-bookings">
+  <h1>Xour bookings</h1>
+
+<% @bookings.each do |booking| %>
+<div class="card booking-equipment-card">
+  <div class="row no-gutters">
+    <div class="col-4">
+      <%= image_tag(booking.equipment.picture) %>
+    </div>
+    <div class="col-8">
+      <div class="card-body">
+        <h2 class="card-title"><%=booking.equipment.title%></h2>
+        <p class="card-text">Locataire - <%= booking.user.name%></p>
+        <p class="card-text">du <%= booking.starting_date%> au <%=booking.ending_date%></p>
+        <p class="card-price"><%=booking.total_price%>€</p>
+        <p class="card-text"><%=booking.status%></p>
+      </div>
+    </div>
+    <% if booking.status == "Pending" %>
+      <div class="buttons-booking">
+        <%= link_to decline_owner_booking_path(booking), method: :patch do %>
+          <button type="button" class="btn btn-danger btn-decline"><i class="fas fa-times"></i></button>
+        <% end %>
+        <%= link_to accept_owner_booking_path(booking), method: :patch do %>
+          <button type="button" class="btn btn-success btn-accept"><i class="fas fa-check"></i></button>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>
+<% end %>
+</div>
