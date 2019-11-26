@@ -1,2 +1,38 @@
-<h1>Equipments#show</h1>
-<p>Find me in app/views/equipments/show.html.erb</p>
+<h1><%= @equipment.title %></h1>
+
+<div class="container">
+  <div class="row ">
+    <div class="col-6">
+      <div class="card">
+        <div class="card-body">
+          <%= image_tag @equipment.picture, size: '300x300' %>
+          <div class="card-text">
+            <div class="list-group">
+              <div class="list-group-item">Ou louer? <%= @equipment.location %></div>
+              <div class="list-group-item">Prix: <%= @equipment.price_per_day %>Eur / jour</div>
+              <div class="list-group-item"><%= @equipment.material_category %></div>
+              <div class="list-group-item"><%= @equipment.details %></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-6">
+      <div class="card">
+        <div class="card-body">
+          <div class="form-inputs">
+            <%= simple_form_for [@equipment, @booking] do |f| %>
+            <%= f.error_notification %>
+            <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+            <%= f.input :starting_date, as: :date, label: 'Date début location' %>
+            <%= f.input :ending_date, as: :date, label: 'Date fin location' %>
+          </div>
+          <div class="form-actions">
+            <%= f.button :submit, "Soumettre votre réservation" %>
+          </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
