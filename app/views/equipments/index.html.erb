@@ -1,18 +1,18 @@
 <div class="banner">
   <h1>Welcome to FROZEN!</h1>
   <p>Rent your skiing equipment</p>
-  <button type="button" class="btn btn-light">Rent now!</button>
+  <button type="button" class="btn btn-light btn-banner">Rent now!</button>
   <button></button>
 </div>
 
 <% @equipments.each do |equipment| %>
   <div class="card home-equipment-card" style="width: 18rem;">
     <div class="card-image">
-      <%= cl_image_tag equipment.picture, height: 300, width: 400, crop: :fill %>
+      <%= image_tag equipment.picture, height: 300, width: 400, crop: :fill %>
     </div>
 
     <div class="card-body">
-      <h2 class="card-title"><%= link_to equipment.title, equipment_path(equipment) %> %></h2>
+      <h2 class="card-title"><%= link_to equipment.title, equipment_path(equipment) %></h2>
       <div class="row">
         <p class="card-category"><%=  equipment.material_category %></p>
         <p class="card-price"><%=  equipment.price_per_day %></p>
