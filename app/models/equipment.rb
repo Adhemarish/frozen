@@ -4,7 +4,7 @@ class Equipment < ApplicationRecord
 
   belongs_to :owner, class_name: 'User'
   has_many :bookings
-
+  
   validates :title, presence: true
   validates :details, presence: true, length: { minimum: 10 }
   validates :material_category, presence: true, inclusion: { in: CATEGORY }
