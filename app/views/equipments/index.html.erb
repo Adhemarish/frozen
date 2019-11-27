@@ -1,30 +1,37 @@
 <div class="banner">
-  <h1>Bienvenue chez FROZEN!</h1>
-  <p>Louez facilement tout votre équipement de ski</p>
+  <h1>Bienvenue chez FROZEN</h1>
+  <h4>Trouvez tout votre équipement de ski !</h4>
   <%= link_to new_user_registration_path do %>
-    <button type="button" class="btn btn-light btn-banner">Louez!</button>
+    <button type="button" class="btn btn-flat">Louer</button>
   <% end %>
 </div>
 
 <div class="container">
   <div class="row">
     <% @equipments.each do |equipment| %>
-        <div class="card mb-3 home-equipment-card">
+      <div class="col col-md-4 col-lg-4">
+        <div class="equipment-card" style="max-width: 640px;">
           <div class="row no-gutters">
-            <div class="col-4">
-              <%= cl_image_tag equipment.picture %>
+            <div class="equipment-img col-md-4 text-center align-item">
+              <%= cl_image_tag(equipment.picture,width: 100, crop: :scale, class:"card-img") %>
             </div>
-            <div class="col-8">
+            <div class="col-md-8">
               <div class="card-body">
-                <h2 class="card-title"><%= link_to equipment.title, equipment_path(equipment) %></h2>
-                <div class="row bottom-part">
-                  <p class="card-category"><%=  equipment.material_category %> <%= equipment.owner.name %></p>
-                  <p class="card-price"><%=  equipment.price_per_day %>€/jour</p>
-                </div>
+                
+                <h5 class="card-title"><%= equipment.title%></h5>
+                <!-- <p class="card-text text-justify"><%=equipment.details%></p> -->
+                <p class="card-text"><small class="text-muted"><%=equipment.material_category%></small></p>
+                <p class="card-text"><strong><%=equipment.price_per_day%>€</strong>/jour - <%=equipment.location%></p>
+
+                <%= link_to equipment_path(equipment) do %>
+                    <button type="button" class="btn btn-flat-voir">Voir</button>
+                 <% end %>
+
               </div>
             </div>
           </div>
         </div>
+      </div>
     <% end %>
   </div>
 </div>
@@ -39,5 +46,17 @@
   ></div>
 </div>
 <div class="footer">
-  <p>Louez facilement tout votre équipement de ski</p>
+  <div class="footer-links">
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-facebook"></i></a>
+  </div>
+  <div class="footer-copyright">
+    Tout pour le ski depuis 2016, conçu avec <i class="fas fa-heart"></i>
+  </div>
 </div>
+
+
+
+
+
+

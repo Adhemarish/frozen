@@ -26,4 +26,5 @@ class EquipmentsController < ApplicationController
     @equipment = Equipment.find(params[:id])
     @booking = Booking.new
   end
+
 end
