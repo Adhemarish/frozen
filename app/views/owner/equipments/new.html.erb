@@ -1,38 +1,43 @@
-<h2>Ajouter un équipement à louer</h2>
-
 <%= simple_form_for @equipment, url: owner_equipments_path do |f| %>
 
-  <div class="form-inputs">
+  <div class="form-inputs mx-auto width-form mt-3">
+    <h2 class="text-center mb-3">Ajouter un équipement à louer</h2>
     <%= f.input :title,
                 label: 'Titre',
-                placeholder: 'Boots snowboard taille 38',
+                placeholder: 'Exemple : boots snowboard taille 38',
                 required: true,
-                autofocus: true %>
+                autofocus: true,
+                input_html: { class: 'radius' } %>
     <%= f.input :details,
-                placeholder: "Décrivez l'objet",
+                placeholder: "Décrivez votre équipement",
                 required: true,
-                autofocus: true %>
+                autofocus: true,
+                input_html: { class: 'radius' } %>
     <%= f.input :material_category,
                 collection: Equipment::CATEGORY,
                 label: 'Catégories',
-                required: true %>
+                required: true,
+                input_html: { class: 'radius' } %>
     <%= f.input :location,
                 label: 'Localisation',
-                placeholder: 'Lyon, Grenoble, ...',
-                required: true %>
+                placeholder: 'Exempe : Lyon, Grenoble, ...',
+                required: true,
+                input_html: { class: 'radius' } %>
     <%= f.input :picture,
                 label: "Photo de l'équipement",
                 required: true %>
     <%= f.input :picture_cache, as: :hidden %>
     <%= f.input :price_per_day,
                 label: 'Prix de location par jour',
-                placeholder: '75',
-                required: true %>
+                placeholder: '15',
+                required: true,
+                input_html: { class: 'radius' } %>
+
+    <div class="form-actions">
+      <%= f.button :submit, "Ajouter votre équipement", class:'btn btn-primary w-100'%>
+    </div>
+    <% end %>
+
+    <form action="/"></form>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Ajouter votre équipement"%>
-  </div>
-<% end %>
-
-<form action="/"></form>

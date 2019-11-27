@@ -1,20 +1,27 @@
-<h2>Log in</h2>
 
 <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="form-inputs">
+  <div class="form-inputs mx-auto width-form mt-5">
+    <h2 class="mb-3 text-center">Se connecter à votre compte</h2>
     <%= f.input :email,
                 required: false,
                 autofocus: true,
-                input_html: { autocomplete: "email" } %>
+                input_html: { autocomplete: "email" },
+                input_html: { class: 'radius' } %>
     <%= f.input :password,
+                label: "Mot de passe",
                 required: false,
-                input_html: { autocomplete: "current-password" } %>
-    <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+                input_html: { autocomplete: "current-password" },
+                input_html: { class: 'radius' } %>
+    <%= f.input :remember_me,
+                label: "Se souvenir de moi",
+                as: :boolean if devise_mapping.rememberable? %>
+
+    <div class="form-actions">
+    <%= f.button :submit, "Se connecter", class:'btn btn-primary w-100' %>
+    </div>
+    <%= render "devise/shared/links" %>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Log in" %>
-  </div>
 <% end %>
 
-<%= render "devise/shared/links" %>
+

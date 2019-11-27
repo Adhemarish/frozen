@@ -7,3 +7,50 @@
 @import "footer";
 @import "button";
 @import 'delete';
+@import "map";
+@import 'form';
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  h1 {
+    font-family: 'Baskervville', serif;
+    font-weight : bold;
+    // color:#8400BD;
+  }
+  p, h3, h4 {
+    font-family: 'Montserrat', sans-serif;
+  }
+}
+
+h2 {
+    font-family: 'Baskervville', serif;
+    color:#8400BD;
+    font-weight: bold;
+
+  }
+
+h5 {
+    font-family: 'Baskervville', serif;
+    color:#8400BD;
+    font-weight: bold;
+
+  }
+
+th {
+    font-family: 'Montserrat', sans-serif;
+    color: black;
+}
+
+.btn {
+  font-weight: bold;
+}
+
+
+.tableau {
+  width: 400px;
+  margin: 10px 50px;
+}
