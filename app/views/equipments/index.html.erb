@@ -18,7 +18,7 @@
               <div class="card-body">
                 <h2 class="card-title"><%= link_to equipment.title, equipment_path(equipment) %></h2>
                 <div class="row bottom-part">
-                  <p class="card-category"><%=  equipment.material_category %></p>
+                  <p class="card-category"><%=  equipment.material_category %> <%= equipment.owner.name %></p>
                   <p class="card-price"><%=  equipment.price_per_day %>€/jour</p>
                 </div>
               </div>
