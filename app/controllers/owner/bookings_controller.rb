@@ -1,6 +1,6 @@
 class Owner::BookingsController < ApplicationController
   def index
-    @bookings = Booking.all
+    @bookings = Booking.all.select{ |booking| booking.equipment.owner == current_user }
   end
 
   def accept
