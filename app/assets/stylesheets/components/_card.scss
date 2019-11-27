@@ -22,13 +22,13 @@
   .card-title {
     text-align: center;
     margin-bottom: 20px;
-    font-family: Frozito;
+    font-family: 'Baskervville', serif;
   }
   .bottom-part {
     justify-content: space-between;
     border-top: solid 1px #b8d0eb;
     padding-top: 5px;
-    font-family: Frozito;
+    font-family: 'Baskervville', serif;
   }
   .card-price {
     font-weight: bold;
@@ -42,27 +42,24 @@
   .card-title {
     text-align: left;
     margin-bottom: 20px;
-    font-family: Frozito;
+    font-family: 'Baskervville', serif;
     color: #8400BD;
   }
-
-
   .col-md-4 {
     padding-top: 70px;
-
   }
 }
 
 .my-equipments-title h1 {
     text-align: center;
     margin-bottom: 20px;
-    font-family: Frozito;
+    font-family: 'Baskervville', serif;
     color: #8400BD;
   }
 
 .booking-equipment-card {
   position: relative;
-  font-family: Frozito;
+  font-family: 'Baskervville', serif;
   margin: 10px auto;
   align-items: center;
   justify-content: center;
@@ -84,7 +81,7 @@
 
   .card-title {
     color: #6f2dbd;
-    font-family: Frozito;
+    font-family: 'Baskervville', serif;
     text-align: center;
     margin-bottom: 20px;
   }
@@ -99,3 +96,26 @@
   }
 }
 
+// Cards équipements - Home page
+
+.equipment-card {
+  border-radius: 5px;
+
+  background-color: white;
+  margin: 10px;
+
+  .card-body {
+    width: 200px;
+  }
+
+}
+
+.equipment-img {
+  margin: auto;
+  max-height: 100%;
+}
+
+
+.col {
+  max-height: 100%;
+}

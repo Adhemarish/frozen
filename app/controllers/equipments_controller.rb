@@ -11,11 +11,9 @@ class EquipmentsController < ApplicationController
   def create
   end
 
-<<<<<<< HEAD
-=======
   def show
     @equipment = Equipment.find(params[:id])
     @booking = Booking.new
   end
->>>>>>> 42a636dfe2389a736679a64d89c91fe807fda21a
+
 end
