@@ -40,15 +40,29 @@ h5 {
 
   }
 
+a {
+  color: black;
+}
+
+a:hover {
+  color: gray;
+  text-decoration: none;
+}
+
+th, td {
+  font-family: 'Montserrat', sans-serif;
+  color: black;
+}
+
+tbody {
+  font-weight: light;
+}
+
 h4 {
   font-family: 'Baskervville', serif;
     color:#8400BD;
 }
 
-th {
-    font-family: 'Montserrat', sans-serif;
-    color: black;
-}
 
 .btn {
   font-weight: bold;
