@@ -7,3 +7,12 @@
 @import "footer";
 @import "button";
 @import 'delete';
+
+body {
+  h1 {
+    font-family: 'Baskervville', serif;
+  }
+  p {
+    font-family: 'Montserrat', sans-serif;
+  }
+}
