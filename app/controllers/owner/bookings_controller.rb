@@ -1,6 +1,6 @@
 class Owner::BookingsController < ApplicationController
   def index
-    @bookings = Booking.all
+    @bookings = Booking.all.select{ |booking| booking.equipment.owner == current_user }
   end
 
   def accept
@@ -13,7 +13,7 @@ class Owner::BookingsController < ApplicationController
 
   def decline
     @booking = Booking.find(params[:id])
-    @booking.status = "refused"
+    @booking.status = "declined"
     if @booking.save
       redirect_to owner_bookings_path
     end

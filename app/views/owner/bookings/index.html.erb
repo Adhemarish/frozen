@@ -1,5 +1,5 @@
 <div class="container container-bookings">
-  <h1>Xour bookings</h1>
+  <h1>Your bookings</h1>
 
 <% @bookings.each do |booking| %>
 <div class="card booking-equipment-card">
@@ -13,10 +13,16 @@
         <p class="card-text">Locataire - <%= booking.user.name%></p>
         <p class="card-text">du <%= booking.starting_date%> au <%=booking.ending_date%></p>
         <p class="card-price"><%=booking.total_price%>€</p>
-        <p class="card-text"><%=booking.status%></p>
+        <%  if booking.status == "pending" %>
+          <p class="card-text" style="color: orange">En attente</p>
+        <% elsif booking.status == "accepted" %>
+          <p class="card-text" style="color: green">Accepte</p>
+        <% else %>
+          <p class="card-text" style="color: red">Decline</p>
+        <% end %>
       </div>
     </div>
-    <% if booking.status == "Pending" %>
+    <% if booking.status == "pending" %>
       <div class="buttons-booking">
         <%= link_to decline_owner_booking_path(booking), method: :patch do %>
           <button type="button" class="btn btn-danger btn-decline"><i class="fas fa-times"></i></button>

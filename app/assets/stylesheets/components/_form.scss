@@ -1,0 +1,17 @@
+.width-form {
+  width:550px;
+}
+
+.radius {
+  border-radius: 10px;
+}
+
+.text-center {
+  text-align:center;
+}
+
+@media (max-width: 600px) {
+  .width-form {
+    width:375px;
+  }
+}

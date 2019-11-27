@@ -17,6 +17,7 @@
             </div>
             <div class="col-md-8">
               <div class="card-body">
+                
                 <h5 class="card-title"><%= equipment.title%></h5>
                 <!-- <p class="card-text text-justify"><%=equipment.details%></p> -->
                 <p class="card-text"><small class="text-muted"><%=equipment.material_category%></small></p>
@@ -25,8 +26,6 @@
                 <%= link_to equipment_path(equipment) do %>
                     <button type="button" class="btn btn-flat-voir">Voir</button>
                  <% end %>
-
-
 
               </div>
             </div>
@@ -37,6 +36,15 @@
   </div>
 </div>
 
+<div class="container">
+  <div
+    id="map"
+    style="width: 100%;
+    height: 600px;"
+    data-markers="<%= @markers.to_json %>"
+    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+  ></div>
+</div>
 <div class="footer">
   <div class="footer-links">
     <a href="#"><i class="fab fa-instagram"></i></a>
