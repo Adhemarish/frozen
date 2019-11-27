@@ -9,7 +9,7 @@
         <h4 class=""><%=booking.equipment.title%></h4>
         <p class="">Locataire - <%= booking.user.name%></p><br>
         <p class="">Du <%= booking.starting_date%> au <%=booking.ending_date%></p><br>
-        <p class=""><strong><%=booking.total_price%>€ / jour</strong></p><br>
+        <p class=""><strong><%=booking.total_price%>€ / jour</strong></p><<br>>
         <%  if booking.status == "pending" %>
           <p class="card-text" style="color: orange">En attente</p>
         <% elsif booking.status == "accepted" %>
