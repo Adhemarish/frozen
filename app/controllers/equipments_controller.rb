@@ -2,7 +2,8 @@ class EquipmentsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    @equipments = Equipment.geocoded #returns equipments with coordinates
+
+    @equipments = Equipment.where.not(owner: current_user) #returns equipments with coordinates
 
     @markers = @equipments.map do |equipment|
       {
@@ -12,6 +13,7 @@ class EquipmentsController < ApplicationController
         image_url: helpers.asset_url('location.svg')
       }
     end
+
   end
 
   def new
