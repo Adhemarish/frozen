@@ -13,7 +13,7 @@
             <thead>
               <tr>
                 <th scope="col">Equipement</th>
-                <th scope="col">Location</th>
+                <th scope="col">Location/Owner</th>
                 <th scope="col">Début</th>
                 <th scope="col" >Fin</th>
                 <th scope="col">Prix total</th>
@@ -25,7 +25,9 @@
               <tr>
                 <th scope="col"><%= link_to booking.equipment.title, equipment_path(booking.equipment)  %>
                 </th>
-                <th scope="col"><%= booking.equipment.location%></th>
+                <th scope="col"><%= booking.equipment.location%>
+                  <%= booking.equipment.owner.name %>
+                </th>
                 <th scope="col"><%= booking.starting_date %></th>
                 <th scope="col"><%= booking.ending_date %></th>
                 <th scope="col"><%= booking.total_price %> €</th>
@@ -55,5 +57,4 @@
 </div>
 
 
-'table.table-striped>thead>tr>th*5'
 
