@@ -33,7 +33,7 @@ h2 {
 
   }
 
-  h5 {
+h5 {
     font-family: 'Baskervville', serif;
     color:#8400BD;
     font-weight: bold;
@@ -51,9 +51,25 @@ a:hover {
 
 th, td {
   font-family: 'Montserrat', sans-serif;
+  color: black;
 }
 
 tbody {
   font-weight: light;
 }
 
+h4 {
+  font-family: 'Baskervville', serif;
+    color:#8400BD;
+}
+
+
+.btn {
+  font-weight: bold;
+}
+
+
+.tableau {
+  width: 400px;
+  margin: 10px 50px;
+}

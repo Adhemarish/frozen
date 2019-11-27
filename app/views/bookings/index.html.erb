@@ -1,7 +1,8 @@
-<h2 class="text-center">Mes réservations</h2>
+<h2 class="text-center mt-4">Mes réservations</h2>
 
 <br>
 
+<div class="tableau">
 
 <div class="container justify-content-center">
   <div class="row">
@@ -9,15 +10,15 @@
       <list-group>
 
         <list-group-item>
-          <table class="table table-bordered">
+          <table class="table table-striped">
             <thead>
               <tr>
                 <th scope="col">Equipement</th>
-                <th scope="col">Location/Owner</th>
+                <th scope="col">Localisation / Propriétaire</th>
                 <th scope="col">Début</th>
                 <th scope="col" >Fin</th>
                 <th scope="col">Prix total</th>
-                <th scope="col">Status</th>
+                <th scope="col">Statut</th>
               </tr>
             </thead>
             <% @bookings.each do |booking| %>
@@ -26,6 +27,7 @@
                 <td scope="col"><%= link_to booking.equipment.title, equipment_path(booking.equipment)  %>
                 </td>
                 <td scope="col"><%= booking.equipment.location%>
+
                   <%= booking.equipment.owner.name %>
                 </td>
                 <td scope="col"><%= booking.starting_date %></td>
@@ -56,5 +58,5 @@
   </div>
 </div>
 
-
+</div>
 
