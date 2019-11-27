@@ -1,14 +1,16 @@
 <%- if controller_name != 'sessions' %>
-  <%= link_to "Se connecter à votre compte", new_session_path(resource_name) %><br />
+  <%= link_to "Connectez-vous", new_session_path(resource_name), class:'text-primary' %><br/>
 <% end %>
 
-<%- if devise_mapping.registerable? && controller_name != 'registrations' %>
-  <%= link_to "Créer un compte", new_registration_path(resource_name) %><br />
-<% end %>
+<div class="d-flex justify-content-center mt-3">
+  <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+    <%= link_to "Créer un compte", new_registration_path(resource_name), class:'mr-3' %><br />
+  <% end %>
 
-<%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
-  <%= link_to "Mot de passe oublié ?", new_password_path(resource_name) %><br />
-<% end %>
+  <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+    <%= link_to "Mot de passe oublié ?", new_password_path(resource_name) %><br />
+  <% end %>
+</div>
 
 <%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>
   <%= link_to "Vous avez pas reçu l'email de confirmation ?", new_confirmation_path(resource_name) %><br />
