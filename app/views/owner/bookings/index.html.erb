@@ -1,5 +1,5 @@
 <div class="container container-bookings">
-  <h1>Your bookings</h1>
+  <h2>Demandes de réservation de mes équipements</h2>
 
 <% @bookings.each do |booking| %>
 <div class="card booking-equipment-card">
@@ -9,16 +9,16 @@
     </div>
     <div class="col-8">
       <div class="card-body">
-        <h2 class="card-title"><%=booking.equipment.title%></h2>
+        <h3 class="card-title"><%=booking.equipment.title%></h3>
         <p class="card-text">Locataire - <%= booking.user.name%></p>
         <p class="card-text">du <%= booking.starting_date%> au <%=booking.ending_date%></p>
         <p class="card-price"><%=booking.total_price%>€</p>
         <%  if booking.status == "pending" %>
           <p class="card-text" style="color: orange">En attente</p>
         <% elsif booking.status == "accepted" %>
-          <p class="card-text" style="color: green">Accepte</p>
+          <p class="card-text" style="color: green">Accepté</p>
         <% else %>
-          <p class="card-text" style="color: red">Decline</p>
+          <p class="card-text" style="color: red">Décliné</p>
         <% end %>
       </div>
     </div>
