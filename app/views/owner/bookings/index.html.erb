@@ -1,18 +1,14 @@
-<div class="container container-bookings">
-  <h1>Your bookings</h1>
+<div class="container">
+  <h2 class="text-center mt-3">Vos réservations</h2>
 
 <% @bookings.each do |booking| %>
-<div class="card booking-equipment-card">
-  <div class="row no-gutters">
-    <div class="col-4">
-      <%= cl_image_tag(booking.equipment.picture) %>
-    </div>
-    <div class="col-8">
-      <div class="card-body">
-        <h2 class="card-title"><%=booking.equipment.title%></h2>
-        <p class="card-text">Locataire - <%= booking.user.name%></p>
-        <p class="card-text">du <%= booking.starting_date%> au <%=booking.ending_date%></p>
-        <p class="card-price"><%=booking.total_price%>€</p>
+  <div class="card flex-row">
+      <%= cl_image_tag(booking.equipment.picture, width: 200, height: 200, crop: :fill) %>
+    <div class="w-75">
+        <h4 class=""><%=booking.equipment.title%></h4>
+        <p class="">Locataire - <%= booking.user.name%></p><br>
+        <p class="">Du <%= booking.starting_date%> au <%=booking.ending_date%></p><br>
+        <p class=""><strong><%=booking.total_price%>€ / jour</strong></p><br>
         <%  if booking.status == "pending" %>
           <p class="card-text" style="color: orange">En attente</p>
         <% elsif booking.status == "accepted" %>
@@ -20,7 +16,6 @@
         <% else %>
           <p class="card-text" style="color: red">Decline</p>
         <% end %>
-      </div>
     </div>
     <% if booking.status == "pending" %>
       <div class="buttons-booking">
@@ -33,6 +28,5 @@
       </div>
     <% end %>
   </div>
-</div>
 <% end %>
 </div>
