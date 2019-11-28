@@ -3,8 +3,6 @@
 .my-equipments-card {
     background-color: white;
     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
-    height:225px;
-
 }
 
 .my-equipments-title h1 {
@@ -52,6 +50,10 @@
   }
 }
 
+.text-my-equip {
+  color: #A8A8A8;
+}
+
 // Cards équipements - Home page
 
 .card-index {
@@ -69,6 +71,7 @@
   flex-grow:1;
   display:grid;
   grid-template-columns: 1fr 1fr;
+  margin-bottom:20px;
 }
 
 .card-index-user {
