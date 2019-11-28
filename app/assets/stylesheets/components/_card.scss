@@ -123,13 +123,53 @@
   padding: 20px;
   position: relative;
 
-  .row {
+  .price-location {
     position: absolute;
     bottom: 0;
-    justify-content: space between;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .location {
+    display: flex;
+    height: 25px;
+  }
+  .full-address {
+    height: 25px;
+  }
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: top;
+    margin-top: 20px;
+    margin-right: 20px;
+    margin-left: 20px;
+    padding-top: 20px;
+  }
+
+  .owner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .price {
+    font-weight: bold;
+  }
+
+  .details {
+    margin-left: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
   }
 }
 
+//Card - formulaire demande de réservation - Show Equipment
+
+.form-booking {
+  border-radius: 5px;
+  height: 350px;
+}
 
 // Cards - Mes réservations (owner)
 
