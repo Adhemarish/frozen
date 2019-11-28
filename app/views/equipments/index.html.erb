@@ -15,14 +15,14 @@
 
         <div class="cards">
           <% @equipments.each do |equipment| %>
-
+          <%= link_to equipment_path(equipment) do %>
             <div class="card-index m-2 mb-3">
               <div class="d-flex">
                 <div class="flex-max-40 flex-max-img">
                   <%= cl_image_tag(equipment.picture,width: 200, height:150, crop: :scale, class:"card-img") %>
                 </div>
                 <div class="flex-max-50 d-flex flex-column justify-content-between">
-                  <div class="pl-1">
+                  <div class="pl-1 pr-2">
                     <h5 class="mt-3"><%= equipment.title%></h5>
                     <p class=' card-index-price'><%= equipment.price_per_day %> € / jour</p>
                   </div>
@@ -33,6 +33,7 @@
                 </div>
               </div>
             </div>
+          <% end %>
           <% end %>
 
         </div>
