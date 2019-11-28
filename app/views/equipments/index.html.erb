@@ -1,14 +1,30 @@
 <div class="banner">
-  <h1>Bienvenue chez FROZEN</h1>
-  <h4>Trouvez tout votre équipement de ski !</h4>
-  <%= link_to new_user_registration_path do %>
-    <button type="button" class="btn btn-flat">Louer</button>
-  <% end %>
+  <div class="titre-banner">
+    <h1>FROZEN</h1>
+    <h4 class="sous-titre-blanc">Louez votre équipement de ski à prix mini !</h4>
+  </div>
+  <div class="searchbar">
+    <button type="button" class="btn btn-navbar">SEARCHBAR A FAIRE</button>
+  </div>
 </div>
 
 <div class="container">
   <div class="row">
-    <div class="col-8">
+
+    <% @equipments.each do |equipment| %>
+      <div class="col col-md-4 col-lg-4">
+        <div class="equipment-card mb-4" style="max-width: 640px; height:200px;">
+          <div class="row no-gutters">
+            <div class="equipment-img col-md-4 text-center align-item">
+              <%= cl_image_tag(equipment.picture,width: 100, crop: :scale, class:"card-img") %>
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+
+                <h5 class="card-title"><%= equipment.title%></h5>
+                <!-- <p class="card-text text-justify"><%=equipment.details%></p> -->
+                <p class="card-text"><small class="text-muted"><%=equipment.material_category%></small></p>
+                <p class="card-text"><strong><%=equipment.price_per_day%>€</strong>/jour - <%=equipment.location.match(/\s(\w+)$/)%></p>
 
       <div class="cards">
         <% @equipments.each do |equipment| %>

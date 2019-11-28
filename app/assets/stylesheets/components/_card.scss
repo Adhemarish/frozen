@@ -20,13 +20,13 @@
   .card-title {
     text-align: center;
     margin-bottom: 20px;
-    font-family: 'Baskervville', serif;
+    font-family: 'Nunito', sans-serif;
   }
   .bottom-part {
     justify-content: space-between;
     border-top: solid 1px #b8d0eb;
     padding-top: 5px;
-    font-family: 'Baskervville', serif;
+    font-family: 'Nunito', sans-serif;
   }
   .card-price {
     font-weight: bold;
@@ -43,13 +43,13 @@
 
 .my-equipments-title h1 {
     text-align: center;
-    font-family: 'Baskervville', serif;
+    font-family: 'Nunito', sans-serif;
     color: #8400BD;
   }
 
 .booking-equipment-card {
   position: relative;
-  font-family: 'Baskervville', serif;
+  font-family: 'Nunito', sans-serif;
   margin: 10px auto;
   align-items: center;
   justify-content: center;
@@ -71,7 +71,7 @@
 
   .card-title {
     color: #6f2dbd;
-    font-family: 'Baskervville', serif;
+    font-family: 'Nunito', sans-serif;
     text-align: center;
     margin-bottom: 20px;
   }
@@ -126,11 +126,20 @@
 
 // Cards détail équipement - Show équipement
 
-.card {
-   border-radius: 5px;
-
+.card-show-equipment {
+  display: flex;
+  flex-direction: column;
+  height: 80vh;
+  border-radius: 5px;
   background-color: white;
   padding: 20px;
+  position: relative;
+
+  .row {
+    position: absolute;
+    bottom: 0;
+    justify-content: space between;
+  }
 }
 
 // Cards - Mes réservations (owner)
