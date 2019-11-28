@@ -24,14 +24,14 @@
         <th><%=booking.total_price%>€ / jour</th>
         <th>
           <% if booking.status == "pending" %>
-            <div class="buttons-booking">
+            <!-- <div class="buttons-booking"> -->
             <%= link_to decline_owner_booking_path(booking), method: :patch do %>
             <button type="button" class="btn btn-danger btn-decline"><i class="fas fa-times"></i></button>
             <% end %>
             <%= link_to accept_owner_booking_path(booking), method: :patch do %>
             <button type="button" class="btn btn-success btn-accept"><i class="fas fa-check"></i></button>
             <% end %>
-            </div>
+            <!-- </div> -->
           <% elsif booking.status == "accepted" %>
             <p class="card-text" style="color: green">Accepté</p>
           <% else %>
