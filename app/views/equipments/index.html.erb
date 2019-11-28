@@ -4,18 +4,19 @@
     <h1>Votre équipement de ski</h1>
     <h4 class="sous-titre-blanc">loué à prix mini !</h4>
   </div>
-  <div class="searchbar">
-    <!-- <button type="button" class="btn btn-navbar rounded"> -->
-      <card class="card-body small-shadow">
-        <%= form_tag root_path, method: :get do %>
-        <%= text_field_tag :query,
-          params[:query],
-          class: "form-control rounded",
-          placeholder: "Find a ..."
-        %>
-        <%#= submit_tag "Recherche", class: "btn btn-primary" %>
-        <% end %>
-      </card>
+
+<%= simple_form_for :search, url: root_path, method: :get do |f| %>
+  <div class="search-form-control form-group mt-4">
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control rounded",
+      placeholder: "Je cherche..."
+    %>
+  <button name="button" type="submit" class="btn btn-flat-go">
+    <i class="fas fa-search"></i> Go !
+  </button>
+<% end %>
+
     <!-- </button> -->
   </div>
 </div>
@@ -41,6 +42,7 @@
                   <div>
                     <%= cl_image_tag(equipment.owner.avatar, width:40, height:40, crop: :scale, class:'card-index-user avatar-bordered') %>
                     <p class="pl-1 pb-2" style="font-size:14px;"><%=equipment.location.match(/\s(\w+)$/)%></p>
+
                   </div>
                 </div>
               </div>
