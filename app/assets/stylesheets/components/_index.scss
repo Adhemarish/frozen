@@ -16,41 +16,69 @@
 }
 
 body {
+  font-family: 'Nunito', sans-serif;
+
   h1 {
-    font-family: 'Baskervville', serif;
-    font-weight : bold;
+    font-weight : 900;
+    font-size: 60px;
+
     // color:#8400BD;
-  }
-  p, h3, h4 {
-    font-family: 'Montserrat', sans-serif;
   }
 }
 
 h2 {
-    font-family: 'Baskervville', serif;
+    font-family: 'Nunito', sans-serif;
     color:#8400BD;
     font-weight: bold;
 
   }
 
 h5 {
-    font-family: 'Baskervville', serif;
+    font-family: 'Nunito', sans-serif;
     color:#8400BD;
     font-weight: bold;
 
   }
 
+a {
+  color: black;
+}
+
+a:hover {
+  color: gray;
+  text-decoration: none;
+}
+
+th, td {
+  font-family: 'Nunito', sans-serif;
+  color: black;
+}
+
+tbody {
+  font-weight: light;
+}
+
+h4 {
+    font-family: 'Nunito', sans-serif;
+    color:#8400BD;
+}
+
+
 th {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Nunito', sans-serif;
     color: black;
 }
-
-.btn {
-  font-weight: bold;
-}
-
 
 .tableau {
   width: 400px;
   margin: 10px 50px;
 }
+
+.sous-titre-blanc {
+  color: white;
+  font-weight: bold;
+  font-family: 'Nunito', sans-serif;
+}
+
+
+

@@ -1,2 +1,74 @@
-<%= render 'index', equipments: @equipments, markers: @markers, list_cities: @list_cities %>
 
+<div class="banner">
+  <div class="titre-banner">
+    <h1>Votre équipement de ski</h1>
+    <h4 class="sous-titre-blanc">loué à prix mini !</h4>
+  </div>
+  <div class="searchbar">
+    <button type="button" class="btn btn-navbar">SEARCHBAR A FAIRE</button>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+
+    <% @equipments.each do |equipment| %>
+      <div class="col col-md-4 col-lg-4">
+        <div class="equipment-card mb-4" style="max-width: 640px; height:200px;">
+          <div class="row no-gutters">
+            <div class="equipment-img col-md-4 text-center align-item">
+              <%= cl_image_tag(equipment.picture,width: 100, crop: :scale, class:"card-img") %>
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+
+                <h5 class="card-title"><%= equipment.title%></h5>
+                <!-- <p class="card-text text-justify"><%=equipment.details%></p> -->
+                <p class="card-text"><small class="text-muted"><%=equipment.material_category%></small></p>
+                <p class="card-text"><strong><%=equipment.price_per_day%>€</strong>/jour - <%=equipment.location.match(/\s(\w+)$/)%></p>
+
+      <div class="cards">
+        <% @equipments.each do |equipment| %>
+
+          <div class="card-index m-2 mb-3">
+            <div class="d-flex">
+              <div class="flex-max-40 flex-max-img">
+                <%= cl_image_tag(equipment.picture,width: 200, height:150, crop: :scale, class:"card-img") %>
+              </div>
+              <div class="flex-max-50 d-flex flex-column justify-content-between">
+                <div class="pl-1">
+                  <h5 class="mt-3"><%= equipment.title%></h5>
+                  <p class=' card-index-price'><%= equipment.price_per_day %> € / jour</p>
+                </div>
+                <div>
+                  <%= cl_image_tag(equipment.owner.avatar, width:40, height:40, crop: :scale, class:'card-index-user avatar-bordered') %>
+                  <p class="pl-1"><%=equipment.location%></p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        <% end %>
+      </div>
+    </div>
+
+    <div class="col-4">
+      <div
+        id="map"
+        data-markers="<%= @markers.to_json %>"
+        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="footer">
+  <div class="footer-links">
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-facebook"></i></a>
+  </div>
+  <div class="footer-copyright">
+    Tout pour le ski depuis 2016, conçu avec <i class="fas fa-heart"></i>
+  </div>
+</div>

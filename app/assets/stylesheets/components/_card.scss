@@ -5,9 +5,7 @@
   height: 30vh;
   width: 100vw;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  .row.no-gutters {
-    justify-content: center;
-  }
+
   .col-4 {
     img {
       height: 100%;
@@ -22,13 +20,13 @@
   .card-title {
     text-align: center;
     margin-bottom: 20px;
-    font-family: 'Baskervville', serif;
+    font-family: 'Nunito', sans-serif;
   }
   .bottom-part {
     justify-content: space-between;
     border-top: solid 1px #b8d0eb;
     padding-top: 5px;
-    font-family: 'Baskervville', serif;
+    font-family: 'Nunito', sans-serif;
   }
   .card-price {
     font-weight: bold;
@@ -38,7 +36,6 @@
 
 .my-equipments-card {
     background-color: white;
-    border: 1px solid black;
     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
     height:225px;
 
@@ -46,13 +43,13 @@
 
 .my-equipments-title h1 {
     text-align: center;
-    font-family: 'Baskervville', serif;
+    font-family: 'Nunito', sans-serif;
     color: #8400BD;
   }
 
 .booking-equipment-card {
   position: relative;
-  font-family: 'Baskervville', serif;
+  font-family: 'Nunito', sans-serif;
   margin: 10px auto;
   align-items: center;
   justify-content: center;
@@ -74,7 +71,7 @@
 
   .card-title {
     color: #6f2dbd;
-    font-family: 'Baskervville', serif;
+    font-family: 'Nunito', sans-serif;
     text-align: center;
     margin-bottom: 20px;
   }
@@ -91,33 +88,68 @@
 
 // Cards équipements - Home page
 
-.equipment-card {
-  border-radius: 5px;
-
-  background-color: white;
-  margin: 10px;
-
-  .card-body {
-    width: 200px;
-  }
-
+.card-index {
+  background-color:white;
+  height:200px;
+  border-radius:4px;
+  box-shadow: 1px 2px 6px rgba(0,0,0,0.2);
+  position:relative;
 }
 
-.equipment-img {
-  margin: auto;
-  max-height: 100%;
+.cards {
+  flex-grow:1;
+  display:grid;
+  grid-template-columns: 1fr 1fr;
 }
 
+.card-index-user {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+}
 
-.col {
-  max-height: 100%;
+.card-index-price {
+  font-weight:bold;
+  font-size:15px;
+}
+
+.flex-max-50 {
+  flex: 0 0 55%;
+}
+
+.flex-max-40 {
+  flex: 0 0 40%;
+}
+.flex-max-img {
+  margin:20px auto;
 }
 
 // Cards détail équipement - Show équipement
 
-.card {
-   border-radius: 5px;
-
+.card-show-equipment {
+  display: flex;
+  flex-direction: column;
+  height: 80vh;
+  border-radius: 5px;
   background-color: white;
   padding: 20px;
+  position: relative;
+
+  .row {
+    position: absolute;
+    bottom: 0;
+    justify-content: space between;
+  }
+}
+
+// Cards - Mes réservations (owner)
+
+.buttons-booking {
+  padding-right: 10px;
+  padding-bottom: 10px;
+}
+
+.card .booking-equipment-card {
+  border-radius: 5px;
+  width: 200px;
 }
