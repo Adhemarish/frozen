@@ -6,15 +6,14 @@ class EquipmentsController < ApplicationController
     @equipments = Equipment.where.not(owner: current_user)
     #returns equipments with coordinates
 
-    #@markers = do_mark(@equipments)
-    # @markers = @equipments.map do |equipment|
-    #   {
-    #     lat: equipment.latitude,
-    #     lng: equipment.longitude,
-    #     infoWindow: render_to_string(partial: "info_window", locals: { equipment: equipment }),
-    #     image_url: helpers.asset_url('location.svg')
-    #   }
-    # end
+    @markers = @equipments.map do |equipment|
+      {
+        lat: equipment.latitude,
+        lng: equipment.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { equipment: equipment }),
+        image_url: helpers.asset_url('location.svg')
+      }
+    end
   end
 
   def search
@@ -36,18 +35,4 @@ class EquipmentsController < ApplicationController
         image_url: helpers.asset_url('location.svg')
     }]
   end
-
-  private
-
-  def do_mark(equipments)
-    equipments.map do |equipment|
-      {
-        lat: equipment.latitude,
-        lng: equipment.longitude,
-        infoWindow: render_to_string(partial: "info_window", locals: { equipment: equipment }),
-        image_url: helpers.asset_url('location.svg')
-      }
-    end
-  end
-
 end
