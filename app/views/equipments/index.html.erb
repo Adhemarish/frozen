@@ -36,11 +36,13 @@
                 <div class="flex-max-50 d-flex flex-column justify-content-between">
                   <div class="pl-1 pr-2">
                     <h5 class="mt-3"><%= equipment.title%></h5>
-                    <p class=' card-index-price'><%= equipment.price_per_day %> € / jour</p>
+                    <p class="text-my-equip mb-2"><%=equipment.material_category%></p>
+                    <p class=' card-index-price' style="font-size:16px;"><%= equipment.price_per_day %> € / jour</p>
                   </div>
                   <div>
                     <%= cl_image_tag(equipment.owner.avatar, width:40, height:40, crop: :scale, class:'card-index-user avatar-bordered') %>
-                    <p class="pl-1"><%=equipment.location.match(/\s(\w+)$/)%></p>
+                    <p class="pl-1 pb-2" style="font-size:14px;"><%=equipment.location.match(/\s(\w+)$/)%></p>
+
                   </div>
                 </div>
               </div>

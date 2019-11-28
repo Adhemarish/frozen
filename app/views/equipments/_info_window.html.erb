@@ -1,3 +1,8 @@
-<h2><%= link_to equipment.title, equipment_path(equipment) %></h2>
-<p><%= equipment.location %></p>
-<p><%= equipment.price_per_day %>€/jour</p>
+
+<%= link_to equipment_path(equipment) do  %>
+  <div class="m-2">
+      <h2 class="mapbox-title"><%= equipment.title %></h2>
+    <p class="mapbox-price my-2"><%= equipment.price_per_day %> € / jour</p>
+    <p><%= equipment.location.match(/\s(\w+)$/) %></p>
+  </div>
+<% end %>
