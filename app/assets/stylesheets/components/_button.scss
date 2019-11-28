@@ -19,7 +19,7 @@
   background: #6E2CBC;
   transition: background 0.3s ease;
   font-weight: bold;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Nunito', sans-serif;
   margin : 20px;
   font-size: 20px
 }
@@ -28,7 +28,7 @@
   background: #A662CC;
   color: white;
   font-weight: bold;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Nunito', sans-serif;
 }
 
 
@@ -39,7 +39,7 @@
   background: #BD86DC;
   transition: background 0.3s ease;
   font-weight: bold;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Nunito', sans-serif;
   margin : 20px;
 }
 
@@ -47,5 +47,20 @@
   background: #B1CCEC;
   color: white;
   font-weight: bold;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Nunito', sans-serif;
+}
+
+
+// Temporaire pour searchbar
+
+.btn-navbar{
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background-color: white;
+  transition: background 0.3s ease;
+  font-weight: bold;
+  font-family: 'Nunito', sans-serif;
+  margin : 20px;
+  width: 500px;
 }
