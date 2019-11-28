@@ -107,19 +107,10 @@
   padding: 20px;
   position: relative;
 
-  .price-location {
-    position: absolute;
-    bottom: 0;
-    justify-content: space-between;
-    width: 100%;
+  .photo-equipment-show {
+    height: 50%;
   }
-  .location {
-    display: flex;
-    height: 25px;
-  }
-  .full-address {
-    height: 25px;
-  }
+
 
   .header {
     display: flex;
@@ -129,6 +120,7 @@
     margin-right: 20px;
     margin-left: 20px;
     padding-top: 20px;
+    height: 10%
   }
 
   .owner {
@@ -137,23 +129,51 @@
     align-items: center;
   }
 
-  .price {
-    font-weight: bold;
-  }
-
   .details {
     margin-left: 20px;
-    margin-top: 20px;
+    margin-top: 80px;
+    margin-bottom: 20px;
+    height: 35%;
+  }
+
+  .price-location {
+    position: absolute;
+    bottom: 0;
+    justify-content: space-between;
+    align-items: start;
+    width: 100%;
+    height: 5%;
     margin-bottom: 20px;
   }
+
+  .price {
+    font-size: 1.5rem;
+  }
+
+  .location {
+    display: flex;
+    height: 25px;
+  }
+  .full-address {
+    height: 25px;
+  }
+
 }
 
+.right-part {
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items:center;
+}
 
 //Card - formulaire demande de réservation - Show Equipment
 
 .form-booking {
+  width: 100%;
   border-radius: 5px;
-  height: 350px;
+  height: 55%;
+  margin-top: 20px;
 }
 // Cards - Mes réservations (owner)
 
