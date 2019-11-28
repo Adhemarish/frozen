@@ -15,12 +15,13 @@
               <p class="muted-text"><%= @equipment.owner.name %></p>
             </div>
           </div>
+            <p class="card-category"><small class="text-muted"><%=@equipment.material_category%></small></p>
             <p class="details text-justify"><%= raw @equipment.details.gsub(".", ".<br>") %></p>
             <div class="row price-location">
-              <p class="price text-warning ml-5 mb-3"><strong id="price_per_day"><%= @equipment.price_per_day %>€ / jour</strong></p>
+              <p class="price text-warning"><strong id="price_per_day"><%= @equipment.price_per_day %>€ / jour</strong></p>
               <div class="location">
                 <%= image_tag 'location', height: 25, width: 25, crop: :fill %>
-                <p class="full-address ml-2 mr-5"><%= @equipment.location %></p>
+                <p class="full-address"><%= @equipment.location %></p>
               </div>
             </div>
         </div>
