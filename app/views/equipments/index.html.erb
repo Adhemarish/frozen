@@ -5,7 +5,18 @@
     <h4 class="sous-titre-blanc">loué à prix mini !</h4>
   </div>
   <div class="searchbar">
-    <button type="button" class="btn btn-navbar">SEARCHBAR A FAIRE</button>
+    <!-- <button type="button" class="btn btn-navbar rounded"> -->
+      <card class="card-body small-shadow">
+        <%= form_tag root_path, method: :get do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control rounded",
+          placeholder: "Find a ..."
+        %>
+        <%#= submit_tag "Recherche", class: "btn btn-primary" %>
+        <% end %>
+      </card>
+    <!-- </button> -->
   </div>
 </div>
 
