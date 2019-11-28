@@ -17,7 +17,7 @@
           </div>
             <p class="details text-justify"><%= raw @equipment.details.gsub(".", "<br>") %></p>
             <div class="row price-location">
-              <p class="price text-warning ml-5 mb-3"><strong><%= @equipment.price_per_day %>€ / jour</strong></p>
+              <p class="price text-warning ml-5 mb-3"><strong id="price_per_day"><%= @equipment.price_per_day %>€ / jour</strong></p>
               <div class="location">
                 <%= image_tag 'location', height: 25, width: 25, crop: :fill %>
                 <p class="full-address ml-2 mr-5"><%= @equipment.location %></p>
@@ -26,7 +26,6 @@
         </div>
       </div>
     </div>
-
     <div class="col-5">
       <div
           id="map"
@@ -46,6 +45,7 @@
             <%= f.input :starting_date, as: :string, label: 'Date début location', required: false, input_html: {class: "datepicker"} %>
             <%= f.input :ending_date, as: :string, label: 'Date fin location',required: false, input_html: {class: "datepicker"} %>
           </div>
+          <h6> Le coût total sera: <span id='total'></span></h6>
           <div class="form-actions text-center">
             <%= f.button :submit, "Soumettre votre réservation", class:'btn btn-flat-voir' %>
           </div>
