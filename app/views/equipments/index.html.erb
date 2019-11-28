@@ -12,7 +12,7 @@
   <div class="row">
     <% @equipments.each do |equipment| %>
       <div class="col col-md-4 col-lg-4">
-        <div class="equipment-card" style="max-width: 640px;">
+        <div class="equipment-card mb-4" style="max-width: 640px; height:200px;">
           <div class="row no-gutters">
             <div class="equipment-img col-md-4 text-center align-item">
               <%= cl_image_tag(equipment.picture,width: 100, crop: :scale, class:"card-img") %>

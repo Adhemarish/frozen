@@ -38,7 +38,6 @@
 
 .my-equipments-card {
     background-color: white;
-    border: 1px solid black;
     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
     height:225px;
 
@@ -120,4 +119,17 @@
 
   background-color: white;
   padding: 20px;
+}
+
+
+// Cards - Mes réservations (owner)
+
+.buttons-booking {
+  padding-right: 10px;
+  padding-bottom: 10px;
+}
+
+.card .booking-equipment-card {
+  border-radius: 5px;
+  width: 200px;
 }

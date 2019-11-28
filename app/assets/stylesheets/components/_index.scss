@@ -42,10 +42,29 @@ h5 {
 
   }
 
+a {
+  color: black;
+}
+
+a:hover {
+  color: gray;
+  text-decoration: none;
+}
+
+th, td {
+  font-family: 'Montserrat', sans-serif;
+  color: black;
+}
+
+tbody {
+  font-weight: light;
+}
+
 h4 {
   font-family: 'Nunito', sans-serif;
     color:#8400BD;
 }
+
 
 th {
     font-family: 'Nunito', sans-serif;

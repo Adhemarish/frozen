@@ -1,3 +1,4 @@
+
 <div class="container">
   <h2 class="text-center mt-3">Vos réservations</h2>
 
@@ -8,13 +9,13 @@
         <h4 class=""><%=booking.equipment.title%></h4>
         <p class="">Locataire - <%= booking.user.name%></p><br>
         <p class="">Du <%= booking.starting_date%> au <%=booking.ending_date%></p><br>
-        <p class=""><strong><%=booking.total_price%>€ / jour</strong></p><br>
+        <p class=""><strong><%=booking.total_price%>€ / jour</strong></p><<br>>
         <%  if booking.status == "pending" %>
           <p class="card-text" style="color: orange">En attente</p>
         <% elsif booking.status == "accepted" %>
-          <p class="card-text" style="color: green">Accepte</p>
+          <p class="card-text" style="color: green">Accepté</p>
         <% else %>
-          <p class="card-text" style="color: red">Decline</p>
+          <p class="card-text" style="color: red">Décliné</p>
         <% end %>
     </div>
     <% if booking.status == "pending" %>
