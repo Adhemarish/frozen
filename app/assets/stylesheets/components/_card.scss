@@ -129,9 +129,14 @@
     align-items: center;
   }
 
+  .card-category {
+    margin-left: 20px;
+    margin-top: 27px;
+  }
+
   .details {
     margin-left: 20px;
-    margin-top: 80px;
+    margin-top: 50px;
     margin-bottom: 20px;
     height: 35%;
   }
@@ -140,10 +145,12 @@
     position: absolute;
     bottom: 0;
     justify-content: space-between;
-    align-items: start;
-    width: 100%;
+    align-items: center;
+    width: 88%;
     height: 5%;
     margin-bottom: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
   }
 
   .price {
