@@ -1,4 +1,4 @@
-aconst pricePerDay = parseInt(document.getElementById('price_per_day').innerHTML)
+const pricePerDay = parseInt(document.getElementById('price_per_day').innerHTML)
 const starting = document.getElementById('booking_starting_date')
 const ending =document.getElementById('booking_ending_date')
 console.log(pricePerDay)
@@ -10,18 +10,18 @@ const calcDays = () => {
   return (nbJours >= 0) ?  nbJours : 0
  }
 
-const calculateDays  = () => {
+const printDays  = () => {
   days = calcDays();
-  document.getElementById('total').innerHTML  = pricePerDay * days + " €"
+  return document.getElementById('total').innerHTML  = pricePerDay * days + " €"
 }
 
 
 starting.addEventListener('change', (event) => {
-  calculateDays()
+  printDays()
  })
 
 ending.addEventListener('change', (event) => {
-  calculateDays()
+  printDays()
  })
 
 
