@@ -16,15 +16,13 @@
 }
 
 body {
+  font-family: 'Nunito', sans-serif;
+
   h1 {
-    font-family: 'Nunito', sans-serif;
     font-weight : 900;
     font-size: 60px;
 
     // color:#8400BD;
-  }
-  p, h3, h4 {
-    font-family: 'Nunito', sans-serif;
   }
 }
 
@@ -52,7 +50,7 @@ a:hover {
 }
 
 th, td {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Nunito', sans-serif;
   color: black;
 }
 
@@ -61,7 +59,7 @@ tbody {
 }
 
 h4 {
-  font-family: 'Nunito', sans-serif;
+    font-family: 'Nunito', sans-serif;
     color:#8400BD;
 }
 
@@ -71,11 +69,6 @@ th {
     color: black;
 }
 
-.btn {
-  font-weight: bold;
-}
-
-
 .tableau {
   width: 400px;
   margin: 10px 50px;
@@ -84,6 +77,7 @@ th {
 .sous-titre-blanc {
   color: white;
   font-weight: bold;
+  font-family: 'Nunito', sans-serif;
 }
 
 
