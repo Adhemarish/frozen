@@ -18,3 +18,13 @@
   margin-bottom:15px;
 }
 
+.map-show {
+    width: 100%;
+    height: 42%;
+  #map {
+    position: absolute;
+    top:0;
+    width: 94%;
+    height: 42%;
+  }
+}
