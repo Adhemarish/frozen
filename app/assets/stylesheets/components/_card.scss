@@ -114,11 +114,20 @@
 
 // Cards détail équipement - Show équipement
 
-.card {
-   border-radius: 5px;
-
+.card-show-equipment {
+  display: flex;
+  flex-direction: column;
+  height: 80vh;
+  border-radius: 5px;
   background-color: white;
   padding: 20px;
+  position: relative;
+
+  .row {
+    position: absolute;
+    bottom: 0;
+    justify-content: space between;
+  }
 }
 
 
