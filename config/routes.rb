@@ -8,6 +8,14 @@ Rails.application.routes.draw do
     resources :bookings, only: [:new, :create]
   end
 
+  # resource :equipments do
+  #   collection do
+  #     get 'search'
+  #   end
+  # end
+
+  get 'search', to: 'equipments#search'
+
   namespace :owner do
     resources :bookings, only: [:index]  do
       member do

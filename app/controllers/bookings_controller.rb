@@ -3,9 +3,6 @@ class BookingsController < ApplicationController
     @bookings = Booking.where(user: current_user)
   end
 
-  def new
-  end
-
   def create
     @equipment = Equipment.find(params[:equipment_id])
     @booking = Booking.new(booking_params)
@@ -24,7 +21,7 @@ class BookingsController < ApplicationController
 
   def destroy
     @booking = Booking.find(params[:id])
-    @booking.destroy
+    @booking.destroy # @booking.status = "cancelled" TODO plus tard
     redirect_to '/bookings'
   end
 
