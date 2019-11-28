@@ -22,11 +22,20 @@ class BookingsController < ApplicationController
     end
   end
 
-  def destroy
-    @booking = Booking.find(params[:id])
-    @booking.destroy
-    redirect_to '/bookings'
+  def cancel
+    @booking = Booking.find(params[:format])
+    @booking.status = "canceled"
+    if @booking.save
+      redirect_to bookings_path
+    end
   end
+
+
+  # def destroy
+  #   @booking = Booking.find(params[:id])
+  #   @booking.destroy
+  #   redirect_to '/bookings'
+  # end
 
   private
 

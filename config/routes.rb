@@ -2,7 +2,8 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'equipments#index'
 
-  resources :bookings, only: [:index, :destroy]
+  resources :bookings, only: [:index]
+  patch 'cancel', to: 'bookings#cancel'
 
   resources :equipments, only: [:show] do
     resources :bookings, only: [:new, :create]
