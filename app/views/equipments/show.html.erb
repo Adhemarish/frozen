@@ -15,7 +15,7 @@
               <p class="muted-text"><%= @equipment.owner.name %></p>
             </div>
           </div>
-            <p class="details text-justify"><%= raw @equipment.details.gsub(".", "<br>") %></p>
+            <p class="details text-justify"><%= raw @equipment.details.gsub(".", ".<br>") %></p>
             <div class="row price-location">
               <p class="price text-warning ml-5 mb-3"><strong id="price_per_day"><%= @equipment.price_per_day %>€ / jour</strong></p>
               <div class="location">
