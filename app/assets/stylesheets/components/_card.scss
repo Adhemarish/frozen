@@ -5,9 +5,7 @@
   height: 30vh;
   width: 100vw;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  .row.no-gutters {
-    justify-content: center;
-  }
+
   .col-4 {
     img {
       height: 100%;
@@ -90,26 +88,40 @@
 
 // Cards équipements - Home page
 
-.equipment-card {
-  border-radius: 5px;
-
-  background-color: white;
-  margin: 10px;
-
-  .card-body {
-    width: 200px;
-  }
-
+.card-index {
+  background-color:white;
+  height:200px;
+  border-radius:4px;
+  box-shadow: 1px 2px 6px rgba(0,0,0,0.2);
+  position:relative;
 }
 
-.equipment-img {
-  margin: auto;
-  max-height: 100%;
+.cards {
+  flex-grow:1;
+  display:grid;
+  grid-template-columns: 1fr 1fr;
 }
 
+.card-index-user {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+}
 
-.col {
-  max-height: 100%;
+.card-index-price {
+  font-weight:bold;
+  font-size:15px;
+}
+
+.flex-max-50 {
+  flex: 0 0 55%;
+}
+
+.flex-max-40 {
+  flex: 0 0 40%;
+}
+.flex-max-img {
+  margin:20px auto;
 }
 
 // Cards détail équipement - Show équipement
@@ -129,7 +141,6 @@
     justify-content: space between;
   }
 }
-
 
 // Cards - Mes réservations (owner)
 
