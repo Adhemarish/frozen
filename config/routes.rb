@@ -14,6 +14,8 @@ Rails.application.routes.draw do
   #   end
   # end
 
+  patch 'cancel', to: 'bookings#cancel'
+
   get 'search', to: 'equipments#search'
 
   namespace :owner do
