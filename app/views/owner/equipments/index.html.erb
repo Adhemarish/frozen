@@ -1,6 +1,8 @@
-<div class="my-equipments-title d-flex justify-content-between" style="margin-left:550px">
-  <h2 class="m-5">Mes annonces</h2>
-  <%= link_to "Ajouter un nouvel équipement", new_owner_equipment_path, class:'btn btn-flat m-5'%>
+<div class="my-equipments-title d-flex align-middle justify-content-between" style="margin-left:160px;">
+  <h2 class="pr-3 mt-4">Mes annonces</h2>
+  <%= link_to new_owner_equipment_path do %>
+    <p class="btn btn-flat" style="margin-right:155px;" >+</p>
+  <% end %>
 </div>
 
 
@@ -10,7 +12,7 @@
     <div class="col-6 mb-3 p-2">
       <div class="my-equipments-card d-flex">
         <div class="flex-max-40">
-          <%= cl_image_tag(equipment.picture,width: 150, height: 200, crop: :fill, class:'m-5') %>
+          <%= cl_image_tag(equipment.picture,width: 150, height: 150, crop: :fill, class:'m-5') %>
         </div>
         <div class="flex-max-50 d-flex flex-column justify-content-between">
           <div class="">
@@ -18,9 +20,12 @@
             <p class="text-my-equip mb-2"><%=equipment.material_category%></p>
             <p class=""><%= raw equipment.details.gsub(".", ".<br>") %></p><br>
           </div>
-          <div class="">
-            <p class='card-index-price my-4' style="font-size:20px; "><%= equipment.price_per_day %> € / jour</p>
-            <p class="mb-2" style="font-size:14px;"><%=equipment.location%></p>
+          <div class="d-flex justify-content-between">
+            <div class="d-flex mb-3">
+              <%= image_tag 'location', height: 25, width: 25, crop: :fill, class:'mb-2' %>
+              <p class="pl-2 mt-1" style="font-size:14px;"><%= equipment.location.match(/\s(\w+)$/) %></p>
+            </div>
+            <p class='card-index-price mr-3' style="font-size:20px; "><%= equipment.price_per_day %> € / jour</p>
           </div>
         </div>
       </div>
@@ -29,6 +34,4 @@
     </div>
   </div>
 </div>
-
-
 
