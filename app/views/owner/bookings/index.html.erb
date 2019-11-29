@@ -19,8 +19,8 @@
       <tr>
         <th><%= booking.equipment.title%></th>
         <th><%= booking.user.name%></th>
-        <th><%= booking.starting_date%></th>
-        <th><%= booking.ending_date%></th>
+        <th><%= I18n.localize(booking.starting_date, format: '%d %b %Y')%></th>
+        <th><%= I18n.localize(booking.ending_date, format:'%d %b %Y')%></th>
         <th><%=booking.total_price%>€ / jour</th>
         <th>
           <% if booking.status == "pending" %>
@@ -43,3 +43,6 @@
   </tbody>
 
 </table>
+
+<!--  const options = { weekday: 'long', month: 'long', day: 'numeric', hour: 'numeric' };
+  const formattedDate = today.toLocaleDateString("en-US", options); -->

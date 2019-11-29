@@ -19,8 +19,8 @@
       <tr>
         <th><%= link_to booking.equipment.title, equipment_path(booking.equipment)%></th>
         <th><%= booking.equipment.location%> / <%= booking.equipment.owner.name %></th>
-        <th><%= booking.starting_date%></th>
-        <th><%= booking.ending_date%></th>
+        <th><%= I18n.localize(booking.starting_date, format: '%d %b %Y')%></th>
+        <th><%= I18n.localize(booking.ending_date, format:'%d %b %Y')%></th>
         <th><%=booking.total_price%>€</th>
 
         <th>
