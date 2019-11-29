@@ -15,5 +15,5 @@ class Equipment < ApplicationRecord
   validates :material_category, presence: true, inclusion: { in: CATEGORY }
   validates :location, presence: true
   validates :picture, presence: true
-  validates :price_per_day, presence: true
+  validates :price_per_day, presence: true, inclusion: { in: 1..500 }
 end

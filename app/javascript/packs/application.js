@@ -4,6 +4,8 @@ import 'mapbox-gl/dist/mapbox-gl.css'; // <-- you need to uncomment the styleshe
 
 import "../components/totalPrice"
 
+import "../components/searchBar"
+
 import { initMapbox } from '../plugins/init_mapbox';
 
 initMapbox();

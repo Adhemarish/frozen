@@ -5,21 +5,23 @@
     <h4 class="sous-titre-blanc">loué à prix mini !</h4>
   </div>
 
-<%= simple_form_for :search, url: root_path, method: :get do |f| %>
-  <div class="search-form-control form-group mt-4">
-    <%= text_field_tag :query,
-      params[:query],
-      class: "form-control rounded",
-      placeholder: "Je cherche..."
-    %>
-  <button name="button" type="submit" class="btn btn-flat-go">
-    <i class="fas fa-search"></i> Go !
-  </button>
-<% end %>
-
-    <!-- </button> -->
+  <div class="search-bar">
+    <%= simple_form_for :search, url: root_path, method: :get do |f| %>
+      <div class="search-form-control form-group mt-4">
+        <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "De quel matériel avez-vous besoin ?"
+        %>
+        <button name="button" type="submit" class="btn btn-flat-go">
+          <i class="fas fa-search" style="color:grey; font-size:20px; color:$danger;"></i>
+        </button>
+      </div>
+    <% end %>
   </div>
 </div>
+
+    <!-- </button> -->
 
 <div class="container">
   <div class="row">

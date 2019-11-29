@@ -70,36 +70,52 @@
 //   transition: background 0.3s ease;
 //   font-weight: bold;
 //   font-family: 'Nunito', sans-serif;
-//   margin : 20px;
+//   mrgin : 20px;
 //   width: 500px;
 // }
 
 .search-form-control {
   position: relative;
+  width:570px;
+  // border: 1px solid black;
+  // border-radius:25px;
 }
 
 .search-form-control .btn {
   position: absolute;
   top: 8px;
   bottom: 8px;
-  right: 8px;
+  right:0px;
 }
 
 .search-form-control .form-control {
   height: 3rem;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-  border: 1px solid #E7E7E7;
-  border-radius: 10px;
-  padding-left:15px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+  padding-left:30px;
+  border-radius:50px;
 }
 
 .search-form-control .form-control:focus {
-  border: 1px solid #1EDD88;
-  outline: none !important;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-  border-radius: 10px;
+  border: 1px solid #6E2CBC;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+  border-radius: 50px;
+}
+
+.form-control:focus + .fa-search {
+  color: pink;
 }
 
 .btn.btn-flat-go {
-  border-left: spotted;
+  border-radius: 15px;
+  width:100px;
+}
+
+.search-bar .btn {
+  padding-right:0px;
+}
+
+.search-bar:focus {
+  .fas.fa-search {
+    color: $danger;
+  }
 }
