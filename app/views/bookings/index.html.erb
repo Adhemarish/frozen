@@ -1,6 +1,12 @@
 <div class=" tables px-5">
   <h2 class="text-center m-5">Mes demandes de réservations</h2>
 
+
+<% if @bookings.empty?  %>
+   <h5 class="text-center font-weight-light">Vous n'avez pas de demande de réservation en cours.</h5>
+
+
+<% else %>
 <table class="table table-striped">
 
   <thead>
@@ -25,20 +31,17 @@
 
         <th>
           <% if booking.status == 'pending'%>
-            <div class="btn btn-warning">En attente</div>
+            <div class="btn btn-warning mr-3">En attente</div>
+            <%= link_to cancel_path(id: booking.id), method: :patch, data: { confirm: "Etes-vous certain de vouloir annuler?" }, class: 'text-secondary cancel' do %>
+            <i class="fa fa-times-circle fa-2x" data-toggle="tooltip" data-placement="top" title="Delete"></i>
+            <% end %>
           <% elsif booking.status == 'accepted'%>
             <div class="btn btn-success">Accepté</div>
           <% elsif booking.status == 'declined'%>
             <div class="btn btn-danger">Décliné</div>
           <% else%>
             <div class="btn btn-danger">Annulé</div>
-          <% end %>
-        <% if booking.status == 'pending'%>
-          <td scope="col" > <%= link_to cancel_path(id: booking.id), method: :patch, data: { confirm: "Etes-vous certain de vouloir annuler?" }, class: 'text-secondary cancel' do %>
-            <i class="fa fa-times-circle fa-2x" data-toggle="tooltip" data-placement="top" title="Delete"></i>
-            <% end %>
-          </td>
-        <% end %>
+         <% end %>
         </th>
       </tr>
     <% end %>
@@ -46,6 +49,7 @@
 
 </table>
 
+<% end %>
 
 
 

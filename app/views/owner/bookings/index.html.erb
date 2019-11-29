@@ -1,6 +1,10 @@
 <div class=" tables px-5">
   <h2 class="text-center m-5">Mes équipements loués</h2>
 
+<% if @bookings.empty?  %>
+  <h5 class="text-center font-weight-light">Vous n'avez pas d'équipement loué.</h5>
+
+<% else %>
 <table class="table table-striped">
 
   <thead>
@@ -46,6 +50,7 @@
   </tbody>
 
 </table>
+<% end %>
 
 <!--  const options = { weekday: 'long', month: 'long', day: 'numeric', hour: 'numeric' };
   const formattedDate = today.toLocaleDateString("en-US", options); -->
