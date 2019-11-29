@@ -15,3 +15,10 @@
     width:375px;
   }
 }
+
+.login-form, .sign-up-form {
+  border-radius:10px;
+  padding: 30px;
+  background-color: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}

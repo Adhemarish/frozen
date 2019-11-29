@@ -3,7 +3,7 @@
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= f.error_notification %>
 
-  <div class="form-inputs mx-auto width-form mt-5">
+  <div class="sign-up-form form-inputs mx-auto width-form mt-5">
     <h2 class="text-center mb-3">Créer un compte</h2>
     <div class="d-flex mb-3">
       <p class="pr-2">Vous avez déjà un compte ?</p>
@@ -40,7 +40,7 @@
                 input_html: { class: 'radius' } %>
 
   <div class="form-actions">
-    <%= f.button :submit, "Créer votre compte", class:'btn btn-primary w-100' %>
+    <%= f.button :submit, "Créer votre compte", class:'btn btn-primary w-100 font-weight-bold' %>
   </div>
 <% end %>
   </div>
