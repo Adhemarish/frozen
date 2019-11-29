@@ -134,33 +134,31 @@
 
   .details {
     margin-left: 20px;
-    margin-top: 50px;
+    margin-top: 30px;
     margin-bottom: 20px;
     height: 35%;
   }
 
-  .price-location {
+  .price {
     position: absolute;
     bottom: 0;
-    justify-content: space-between;
-    align-items: center;
-    width: 88%;
+    right: 0;
     height: 5%;
     margin-bottom: 20px;
-    margin-left: 20px;
-    margin-right: 20px;
-  }
-
-  .price {
+    margin-right: 40px;
     font-size: 1.5rem;
   }
 
   .location {
     display: flex;
-    height: 25px;
+    height: 5%;
+    margin-left: 20px;
+    margin-top: 30px;
   }
+
   .full-address {
-    height: 25px;
+    height: 5%;
+    margin-left: 3px;
   }
 
 }
@@ -177,8 +175,12 @@
 .form-booking {
   width: 100%;
   border-radius: 5px;
-  height: 55%;
-  margin-top: 20px;
+  height: 50%;
+  margin-top: 60px;
+
+  .btn-flat-voir {
+    height: 10%;
+  }
 }
 // Cards - Mes réservations (owner)
 
