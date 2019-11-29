@@ -49,13 +49,20 @@
 }
 
 
-.btn-warning, .btn-success, .btn-success {
+.btn-warning, .btn-success, .btn-danger {
   border-radius: 10px;
   font-weight: bold;
 }
 
+.btn-success:hover{
+    background-color: #B1CCEC;
+    border: none;
+    transform: scale(0);
+  }
 
-
+.btn-danger:hover{
+    background-color: #B936CB;
+  }
 // Temporaire pour searchbar
 
 // .btn-navbar{
@@ -114,4 +121,8 @@
   .fas.fa-search {
     color: $danger;
   }
+}
+
+.cancel {
+  font-size: 0.5rem;
 }
