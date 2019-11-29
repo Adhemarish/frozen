@@ -31,16 +31,18 @@
 
         <th>
           <% if booking.status == 'pending'%>
-            <div class="btn btn-warning mr-3">En attente</div>
-            <%= link_to cancel_path(id: booking.id), method: :patch, data: { confirm: "Etes-vous certain de vouloir annuler?" }, class: 'text-secondary cancel' do %>
-            <i class="fa fa-times-circle fa-2x" data-toggle="tooltip" data-placement="top" title="Delete"></i>
-            <% end %>
+            <div class="d-flex">
+              <div class="mr-3" style="color:#5B259D">En attente</div>
+              <%= link_to cancel_path(id: booking.id), method: :patch, data: { confirm: "Etes-vous certain de vouloir annuler?" }, class: 'text-secondary cancel' do %>
+              <i class="fa fa-times-circle fa-2x mt-1" data-toggle="tooltip" data-placement="top" title="Delete"></i>
+              <% end %>
+            </div>
           <% elsif booking.status == 'accepted'%>
-            <div class="btn btn-success">Accepté</div>
+            <div class="" style="color: #B935CB">Accepté</div>
           <% elsif booking.status == 'declined'%>
-            <div class="btn btn-danger">Décliné</div>
+            <div class="" style="color: #5B259D">Décliné</div>
           <% else%>
-            <div class="btn btn-danger">Annulé</div>
+            <div class="" style="color: #B1CCEC">Annulé</div>
          <% end %>
         </th>
       </tr>
