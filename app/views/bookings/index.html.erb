@@ -34,7 +34,7 @@
             <div class="d-flex">
               <div class="mr-3" style="color:#5B259D">En attente</div>
               <%= link_to cancel_path(id: booking.id), method: :patch, data: { confirm: "Etes-vous certain de vouloir annuler?" }, class: 'text-secondary cancel' do %>
-              <i class="fa fa-times-circle fa-2x mt-1" data-toggle="tooltip" data-placement="top" title="Delete"></i>
+              <i class="fa fa-times-circle fa-2x mt-1" data-toggle="tooltip" data-placement="top" title="Annuler"></i>
               <% end %>
             </div>
           <% elsif booking.status == 'accepted'%>
