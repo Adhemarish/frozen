@@ -41,9 +41,9 @@
                     <p class="text-my-equip mb-2"><%=equipment.material_category%></p>
                     <p class=' card-index-price' style="font-size:16px;"><%= equipment.price_per_day %> € / jour</p>
                   </div>
-                  <div>
+                  <div class="border">
+                    <p class="pl-1 pt-3" style="font-size:14px;"><%=equipment.location.match(/\s(\w+)$/)%></p>
                     <%= cl_image_tag(equipment.owner.avatar, width:40, height:40, crop: :scale, class:'card-index-user avatar-bordered') %>
-                    <p class="pl-1 pb-2" style="font-size:14px;"><%=equipment.location.match(/\s(\w+)$/)%></p>
 
                   </div>
                 </div>
