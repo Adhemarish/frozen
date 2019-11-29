@@ -12,58 +12,135 @@ User.destroy_all
 
 puts "Creating database..."
 
-url1 = 'https://cdn.vox-cdn.com/thumbor/rpmbJ_H5i4g3vFNeZVB6mdZHfW4=/0x0:711x400/1200x800/filters:focal(325x93:437x205)/cdn.vox-cdn.com/uploads/chorus_image/image/60365061/pokemon_piplup.0.png'
 ludo = User.new(name: 'Ludo', email: 'ludo@frozen.com', password: 'ludofrozen')
-ludo.remote_avatar_url = url1
+ludo.avatar = File.open(Rails.root.join('db/fixtures/ludo.jpeg'))
 ludo.save!
 
-url2 = 'https://swordshield.pokemon.com/assets/img/articles/pokemon_yamper_2x.png'
 neven = User.new(name: 'Neven', email: 'neven@frozen.com', password: 'nevenfrozen')
-neven.remote_avatar_url = url2
+neven.avatar = File.open(Rails.root.join('db/fixtures/neven.jpeg'))
 neven.save!
 
-url3 = 'https://static.independent.co.uk/s3fs-public/thumbnails/image/2018/11/13/14/pokemon-lets-go.jpg?w968h681'
 caro = User.new(name: 'Caro', email: 'caro@frozen.com', password: 'carofrozen')
-caro.remote_avatar_url = url3
+caro.avatar = File.open(Rails.root.join('db/fixtures/caro.jpeg'))
 caro.save!
 
-url4 = 'https://img.gaming.gentside.com/article/pokemon/pokemon-epee-et-bouclier-ouistempo-de-type-plante_65d88e41a48640e6ceccc08ed4f231e299b3604d.jpg'
 faten = User.new(name: 'Faten', email: 'faten@frozen.com', password: 'fatenfrozen')
-faten.remote_avatar_url = url4
+faten.avatar = File.open(Rails.root.join('db/fixtures/faten.jpeg'))
 faten.save!
 
 # p User.all
 
-a = Equipment.new(owner: User.all.sample, title: "Moonboots taille 40", material_category: "Boots", location: "41 avenue Besnardière, 49100 Angers", price_per_day: "10",details: "Excellent état.\nTrès confortables et très chaudes.\nImperméabilité parfaite.")
-a.remote_picture_url = "https://images.cdn.snowleader.com/media/catalog/product/cache/1/image/0dc2d03fe217f8c83829496872af24a0/m/o/moon_boot_nylon_noire-configurable-moonboot-moon00001_4.jpg"
+a = Equipment.new(owner: ludo, title: "Batons de ski", material_category: "Batons de ski", location: "41 avenue Besnardière, 49100 Angers", price_per_day: "10",details: "Excellent état.\nDragonnes solides.\nLégers.")
+a.picture = File.open(Rails.root.join('db/fixtures/batons1.png'))
 a.save!
-b= Equipment.new(owner: User.all.sample, title: "Skis taille adulte", material_category: "Ski", location: "20 rue Gauthey, 75017 Paris", price_per_day: "20", details: "Quelques rayures sur le dessus.\nFartage refait régulièrement.\nSkis polyvalents, pour tous niveaux." )
-b.remote_picture_url ='https://www.oxygene.ski/wp-content/uploads/2017/03/SILVERoxygene-equipment-photo-refresh-2018-2019-1500-2000-19.jpg'
+b = Equipment.new(owner: caro, title: "Batons de ski adulte", material_category: "Batons de ski", location: "10 rue Franklin, 44000 Nantes", price_per_day: "5",details: "Etat OK.\nBeau planté.\nLégers.")
+b.picture = File.open(Rails.root.join('db/fixtures/batons2.png'))
 b.save!
-c = Equipment.new(owner: User.all.sample, title: "Skis taille enfant", material_category: "Ski", location: "10 rue Franklin, 44000 Nantes", price_per_day: "15", details: "Excellent état.\nTous terrains.\nParfaits pour les petits bouts débutants et confirmés." )
-c.remote_picture_url ='https://contents.mediadecathlon.com/p964789/k$2ae7dc9853285461b6fe9b9705040212/sq/SKI+DE+PISTE+ENFANT+AVEC+FIXATION+BOOST+500+BLEU.jpg'
+c = Equipment.new(owner: faten, title: "Batons de ski", material_category: "Batons de ski", location: "20 rue Gauthey, 75017 Paris", price_per_day: "8",details: "Excellent état.\nAcier solide.\nManiables.")
+c.picture = File.open(Rails.root.join('db/fixtures/batons3.png'))
 c.save!
-d = Equipment.new(owner: User.all.sample, title: "Snowboard adulte", material_category: "Snowboard", location: "1 rue Muller, 75018 Paris", price_per_day: "10", details: "Etat neuf.\nParfait pour le freeride.\nFixations très faciles à utiliser.")
-d.remote_picture_url ='https://contents.mediadecathlon.com/p1705464/k$e806112d6dba25fa93f1f78ba745d90b/sq/Pack+planche+de+snowboard+piste+freeride+femme+Serenity+500.jpg'
+d = Equipment.new(owner: neven, title: "Batons de ski adulte", material_category: "Batons de ski", location: "62 rue de la Louisiane, 83000 Toulon", price_per_day: "7",details: "Etat neuf.\nJamais utilisés.\nRéglables.")
+d.picture = File.open(Rails.root.join('db/fixtures/batons4.png'))
 d.save!
-e = Equipment.new(owner: User.all.sample, title: "Chaussures de ski taille 37", material_category: "Chaussures de ski", location: "43 rue de Brissac, 49000 Angers", price_per_day: "15", details: "Etat OK.\nTrès bonne tenue au mollet.\nPremier claper chaussure droite un peu dur")
-e.remote_picture_url ='https://glisshop-glisshop-fr-storage.omn.proximis.com/Imagestorage/imagesSynchro/735/735/da627020441361f04d0207e5d4df53f4f8bad06f_VH18DALBCHA004_0.jpeg'
+e = Equipment.new(owner: ludo, title: "Batons de ski 1m50", material_category: "Batons de ski", location: "41 avenue Besnardière, 49100 Angers", price_per_day: "6",details: "Excellent état.\nTrès utiles.\nIdéaux por la poudreuse.")
+e.picture = File.open(Rails.root.join('db/fixtures/batons5.jpeg'))
 e.save!
-f = Equipment.new(owner: User.all.sample, title: "Ski de fonds", material_category: "Ski", location: "44 rue François 1er, 75008 Paris", price_per_day: "20", details: "Etat OK.\nQuelques rayures\nParfaits pour un débutant.")
-f.remote_picture_url='https://contents.mediadecathlon.com/p994668/k$b275dfc56feacd7719b32f4bcefc256c/sq/SKI+DE+PISTE+HOMME+AVEC+FIXATION+BOOST+300+ARCHTEC+ROUGE+ET+NOIR.webp'
+f = Equipment.new(owner: caro, title: "Batons de ski adulte", material_category: "Batons de ski", location: "10 rue Franklin, 44000 Nantes", price_per_day: "8",details: "Excellent état.\nBelle déco.\nLégers.")
+f.picture = File.open(Rails.root.join('db/fixtures/batons6.png'))
 f.save!
-g = Equipment.new(owner: User.all.sample, title: "Chaussures de ski taille enfant", material_category: "Chaussures de ski", location: "44 rue Chabre, 83000 Toulon", price_per_day: "8", details: "Excellent état.\nTrès confortables et super maintient.\nLégères et flexibles.")
-g.remote_picture_url ='https://www.placedelaloc.com/sites/default/files/styles/annonce_detail/public/annonces/2018/02/18/32420/location-skis_enfants_80cm_rossignol-680791946.jpg'
+g = Equipment.new(owner: neven, title: "Batons de ski 1m70", material_category: "Batons de ski", location: "62 rue de la Louisiane, 83000 Toulon", price_per_day: "10",details: "Usé.\nQualité supérieure.\nTechniques.")
+g.picture = File.open(Rails.root.join('db/fixtures/batons7.jpeg'))
 g.save!
-h = Equipment.new(owner: User.all.sample, title: "Snowboard Rossignol adulte", material_category: "Snowboard", location: "9 rue de Navarin, 75009 Paris", price_per_day: "10", details: "Etat neuf.\nPlanche polyvalente.\nFixations classiques.")
-h.remote_picture_url = 'https://www.cdiscount.com/pdt2/3/6/6/1/700x700/mp07344366/rw/snowboard-rossignol-tesla-femme.jpg'
+
+h = Equipment.new(owner: ludo, title: "Boots Snowboard adulte", material_category: "Boots", location: "41 avenue Besnardière, 49100 Angers", price_per_day: "9",details: "Excellent état.\nTrès confortables et très chaudes.\nImperméabilité parfaite.")
+h.picture = File.open(Rails.root.join('db/fixtures/boots1.jpeg'))
 h.save!
-i = Equipment.new(owner: User.all.sample, title: "Bâtons de ski adulte", material_category: "Batons de ski", location: "44 rue des Champs Saint-Martin, 49000 Angers", price_per_day: "7", details: "Etat OK.\nTrès robustes.\nHauteur réglable pour utilisateur entre 1m65 et 1m75")
-i.remote_picture_url = 'https://www.montania-sport.com/32377-large_default/batons-monbrin-ski-speed-touring-atk.jpg'
+i = Equipment.new(owner: caro, title: "Boots Snowboard", material_category: "Boots", location: "10 rue Franklin, 44000 Nantes", price_per_day: "10",details: "Excellent état.\nTrès confortables et très chaudes.\nImperméabilité parfaite.")
+i.picture = File.open(Rails.root.join('db/fixtures/boots2.jpeg'))
 i.save!
-k = Equipment.new(owner: User.all.sample, title: "Chaussures de ski taille 39", material_category: "Chaussures de ski", location: "2 rue Paul Fort, 49100 Angers", price_per_day: "15", details: "Etat OK.\nExcellent maintient.\nQuelques rayures.")
-k.remote_picture_url = 'https://contents.mediadecathlon.com/p1706345/k$ad7b7dbc0c7f706bcf9071914abc4235/sq/Chaussures+de+ski+freeride+Rossignol+Alltrack+90.jpg'
+j = Equipment.new(owner: neven, title: "Boots Snowboard femme", material_category: "Boots", location: "62 rue de la Louisiane, 83000 Toulon", price_per_day: "10",details: "Excellent état.\nTrès confortables et très chaudes.\nImperméabilité parfaite.")
+j.picture = File.open(Rails.root.join('db/fixtures/boots3.jpeg'))
+j.save!
+k = Equipment.new(owner: ludo, title: "Boots Snowboard homme", material_category: "Boots", location: "41 avenue Besnardière, 49100 Angers", price_per_day: "10",details: "Excellent état.\nTrès confortables et très chaudes.\nImperméabilité parfaite.")
+k.picture = File.open(Rails.root.join('db/fixtures/boots4.jpeg'))
 k.save!
+l = Equipment.new(owner: caro, title: "Boots Snowboard taille 39", material_category: "Boots", location: "10 rue Franklin, 44000 Nantes", price_per_day: "10",details: "Excellent état.\nTrès confortables et très chaudes.\nImperméabilité parfaite.")
+l.picture = File.open(Rails.root.join('db/fixtures/boots5.jpeg'))
+l.save!
+m = Equipment.new(owner: ludo, title: "Boots Snowboard taille 44", material_category: "Boots", location: "41 avenue Besnardière, 49100 Angers", price_per_day: "10",details: "Excellent état.\nTrès confortables et très chaudes.\nImperméabilité parfaite.")
+m.picture = File.open(Rails.root.join('db/fixtures/boots6.jpeg'))
+m.save!
+n = Equipment.new(owner: faten, title: "Boots Snowboard", material_category: "Boots", location: "20 rue Gauthey, 75017 Paris", price_per_day: "10",details: "Excellent état.\nTrès confortables et très chaudes.\nImperméabilité parfaite.")
+n.picture = File.open(Rails.root.join('db/fixtures/boots7.jpeg'))
+n.save!
+
+o = Equipment.new(owner: ludo, title: "Skis adulte", material_category: "Ski", location: "41 avenue Besnardière, 49100 Angers", price_per_day: "10",details: "Excellent état.\nTrès confortables et très chaudes.\nImperméabilité parfaite.")
+o.picture = File.open(Rails.root.join('db/fixtures/skis1.jpeg'))
+o.save!
+q = Equipment.new(owner: faten, title: "Skis polyvalents", material_category: "Ski", location: "20 rue Gauthey, 75017 Paris", price_per_day: "10",details: "Excellent état.\nTrès confortables et très chaudes.\nImperméabilité parfaite.")
+q.picture = File.open(Rails.root.join('db/fixtures/skis2.jpeg'))
+q.save!
+r = Equipment.new(owner: caro, title: "Skis paraboliques", material_category: "Ski", location: "10 rue Franklin, 44000 Nantes", price_per_day: "10",details: "Excellent état.\nTrès confortables et très chaudes.\nImperméabilité parfaite.")
+r.picture = File.open(Rails.root.join('db/fixtures/skis3.jpeg'))
+r.save!
+s = Equipment.new(owner: ludo, title: "Skis adulte", material_category: "Ski", location: "41 avenue Besnardière, 49100 Angers", price_per_day: "10",details: "Excellent état.\nTrès confortables et très chaudes.\nImperméabilité parfaite.")
+s.picture = File.open(Rails.root.join('db/fixtures/skis4.jpeg'))
+s.save!
+t = Equipment.new(owner: faten, title: "Skis ado", material_category: "Ski", location: "20 rue Gauthey, 75017 Paris", price_per_day: "10",details: "Excellent état.\nTrès confortables et très chaudes.\nImperméabilité parfaite.")
+t.picture = File.open(Rails.root.join('db/fixtures/skis5.jpeg'))
+t.save!
+u = Equipment.new(owner: caro, title: "Skis 1m80", material_category: "Ski", location: "10 rue Franklin, 44000 Nantes", price_per_day: "10",details: "Excellent état.\nTrès confortables et très chaudes.\nImperméabilité parfaite.")
+u.picture = File.open(Rails.root.join('db/fixtures/skis6.jpeg'))
+u.save!
+v = Equipment.new(owner: neven, title: "Skis 1m70", material_category: "Ski", location: "62 rue de la Louisiane, 83000 Toulon", price_per_day: "10",details: "Excellent état.\nTrès confortables et très chaudes.\nImperméabilité parfaite.")
+v.picture = File.open(Rails.root.join('db/fixtures/skis7.jpeg'))
+v.save!
+
+w = Equipment.new(owner: neven, title: "Snowboard adulte", material_category: "Snowboard", location: "62 rue de la Louisiane, 83000 Toulon", price_per_day: "10",details: "Excellent état.\nTrès confortables et très chaudes.\nImperméabilité parfaite.")
+w.picture = File.open(Rails.root.join('db/fixtures/snowboard1.jpeg'))
+w.save!
+x = Equipment.new(owner: caro, title: "Snowboard polyvalents", material_category: "Snowboard", location: "10 rue Franklin, 44000 Nantes", price_per_day: "10",details: "Excellent état.\nTrès confortables et très chaudes.\nImperméabilité parfaite.")
+x.picture = File.open(Rails.root.join('db/fixtures/snowboard2.jpeg'))
+x.save!
+y = Equipment.new(owner: ludo, title: "Snowboard paraboliques", material_category: "Snowboard", location: "41 avenue Besnardière, 49100 Angers", price_per_day: "10",details: "Excellent état.\nTrès confortables et très chaudes.\nImperméabilité parfaite.")
+y.picture = File.open(Rails.root.join('db/fixtures/snowboard3.jpeg'))
+y.save!
+z = Equipment.new(owner: faten, title: "Snowboard adulte", material_category: "Snowboard", location: "20 rue Gauthey, 75017 Paris", price_per_day: "10",details: "Excellent état.\nTrès confortables et très chaudes.\nImperméabilité parfaite.")
+z.picture = File.open(Rails.root.join('db/fixtures/snowboard4.jpeg'))
+z.save!
+aa = Equipment.new(owner: ludo, title: "Snowboard ado", material_category: "Snowboard", location: "41 avenue Besnardière, 49100 Angers", price_per_day: "10",details: "Excellent état.\nTrès confortables et très chaudes.\nImperméabilité parfaite.")
+aa.picture = File.open(Rails.root.join('db/fixtures/snowboard5.jpeg'))
+aa.save!
+bb = Equipment.new(owner: neven, title: "Snowboard 1m80", material_category: "Snowboard", location: "62 rue de la Louisiane, 83000 Toulon", price_per_day: "10",details: "Excellent état.\nTrès confortables et très chaudes.\nImperméabilité parfaite.")
+bb.picture = File.open(Rails.root.join('db/fixtures/snowboard6.jpeg'))
+bb.save!
+cc = Equipment.new(owner: caro, title: "Snowboard 1m70", material_category: "Snowboard", location: "10 rue Franklin, 44000 Nantes", price_per_day: "10",details: "Excellent état.\nTrès confortables et très chaudes.\nImperméabilité parfaite.")
+cc.picture = File.open(Rails.root.join('db/fixtures/snowboard7.jpeg'))
+cc.save!
+
+dd = Equipment.new(owner: caro, title: "Chaussures de ski adulte", material_category: "Chaussures de ski", location: "10 rue Franklin, 44000 Nantes", price_per_day: "10",details: "Excellent état.\nTrès confortables et très chaudes.\nImperméabilité parfaite.")
+dd.picture = File.open(Rails.root.join('db/fixtures/chaussures1.jpeg'))
+dd.save!
+ee = Equipment.new(owner: neven, title: "Chaussures de ski ado", material_category: "Chaussures de ski", location: "62 rue de la Louisiane, 83000 Toulon", price_per_day: "10",details: "Excellent état.\nTrès confortables et très chaudes.\nImperméabilité parfaite.")
+ee.picture = File.open(Rails.root.join('db/fixtures/chaussures2.jpeg'))
+ee.save!
+ff = Equipment.new(owner: ludo, title: "Chaussures de ski rigides", material_category: "Chaussures de ski", location: "41 avenue Besnardière, 49100 Angers", price_per_day: "10",details: "Excellent état.\nTrès confortables et très chaudes.\nImperméabilité parfaite.")
+ff.picture = File.open(Rails.root.join('db/fixtures/chaussures3.jpeg'))
+ff.save!
+gg = Equipment.new(owner: ludo, title: "Chaussures de ski taille 38", material_category: "Chaussures de ski", location: "41 avenue Besnardière, 49100 Angers", price_per_day: "10",details: "Excellent état.\nTrès confortables et très chaudes.\nImperméabilité parfaite.")
+gg.picture = File.open(Rails.root.join('db/fixtures/chaussures4.jpeg'))
+gg.save!
+hh = Equipment.new(owner: faten, title: "Chaussures de ski ado", material_category: "Chaussures de ski", location: "20 rue Gauthey, 75017 Paris", price_per_day: "10",details: "Excellent état.\nTrès confortables et très chaudes.\nImperméabilité parfaite.")
+hh.picture = File.open(Rails.root.join('db/fixtures/chaussures5.jpeg'))
+hh.save!
+ii = Equipment.new(owner: ludo, title: "Chaussures de ski adulte", material_category: "Chaussures de ski", location: "41 avenue Besnardière, 49100 Angers", price_per_day: "10",details: "Excellent état.\nTrès confortables et très chaudes.\nImperméabilité parfaite.")
+ii.picture = File.open(Rails.root.join('db/fixtures/chaussures6.jpeg'))
+ii.save!
+jj = Equipment.new(owner: faten, title: "Chaussures de ski taille 42", material_category: "Chaussures de ski", location: "20 rue Gauthey, 75017 Paris", price_per_day: "10",details: "Excellent état.\nTrès confortables et très chaudes.\nImperméabilité parfaite.")
+jj.picture = File.open(Rails.root.join('db/fixtures/chaussures7.jpeg'))
+jj.save!
+
+
 
 puts "Finished !"
 
