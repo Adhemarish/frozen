@@ -11,9 +11,9 @@ class Equipment < ApplicationRecord
   has_many :bookings
 
   validates :title, presence: true
-  validates :details, presence: true, length: { minimum: 10 }
+  validates :details, presence: true, length: { in: 10..100 }
   validates :material_category, presence: true, inclusion: { in: CATEGORY }
   validates :location, presence: true
   validates :picture, presence: true
-  validates :price_per_day, presence: true
+  validates :price_per_day, presence: true, inclusion: { in: 1..500 }
 end

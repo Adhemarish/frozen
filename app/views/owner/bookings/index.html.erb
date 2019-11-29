@@ -22,6 +22,7 @@
         <th><%= I18n.localize(booking.starting_date, format: '%d %b %Y')%></th>
         <th><%= I18n.localize(booking.ending_date, format:'%d %b %Y')%></th>
         <th><%=booking.total_price%>€ / jour</th>
+
         <th>
           <% if booking.status == "pending" %>
             <!-- <div class="buttons-booking"> -->

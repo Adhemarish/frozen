@@ -14,28 +14,25 @@
 * {
   margin: 0;
   padding: 0;
+  font-family: 'Marcellus SC', serif;
 }
 
 body {
-  font-family: 'Nunito', sans-serif;
 
   h1 {
     font-weight : 900;
     font-size: 60px;
-
     // color:#8400BD;
   }
 }
 
 h2 {
-    font-family: 'Nunito', sans-serif;
     color:#8400BD;
     font-weight: bold;
 
   }
 
 h5 {
-    font-family: 'Nunito', sans-serif;
     color:#8400BD;
     font-weight: bold;
 
@@ -51,14 +48,16 @@ a:hover {
 }
 
 h4 {
-    font-family: 'Nunito', sans-serif;
     color:#8400BD;
 }
 
 h4.sous-titre-blanc {
   color: white;
   font-weight: bold;
-  font-family: 'Nunito', sans-serif;
   font-size: 30px;
 }
 
+.mdp-oublie {
+  text-align: center;
+  margin: 30px;
+}

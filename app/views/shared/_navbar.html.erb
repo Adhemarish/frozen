@@ -13,7 +13,7 @@
       <% if user_signed_in? %>
 
         <%if current_page?('http://localhost:3000/owner/equipments')%>
-        <li class="nav-item active">
+        <li class="nav-item active font-weight-bold">
           <%= link_to "Mes annonces", owner_equipments_path, class: "nav-link" %>
         </li>
         <%else%>
@@ -23,7 +23,7 @@
         <%end%>
 
         <%if current_page?('http://localhost:3000/owner/bookings')%>
-        <li class="nav-item active">
+        <li class="nav-item active font-weight-bold">
           <%= link_to "Mes équipements loués", owner_bookings_path, class: "nav-link" %>
         </li>
         <%else%>
@@ -33,11 +33,11 @@
         <%end%>
 
         <%if current_page?('http://localhost:3000/bookings')%>
-        <li class="nav-item active">
+        <li class="nav-item active pr-3 font-weight-bold">
           <%= link_to "Mes demandes", bookings_path, class: "nav-link" %>
         </li>
         <%else%>
-        <li class="nav-item">
+        <li class="nav-item pr-3">
           <%= link_to "Mes demandes", bookings_path, class: "nav-link" %>
         </li>
         <%end%>

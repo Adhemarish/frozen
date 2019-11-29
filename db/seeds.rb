@@ -46,7 +46,7 @@ c.save!
 d = Equipment.new(owner: User.all.sample, title: "Snowboard adulte", material_category: "Snowboard", location: "1 rue Muller, 75018 Paris", price_per_day: "10", details: "Etat neuf.\nParfait pour le freeride.\nFixations très faciles à utiliser.")
 d.remote_picture_url ='https://contents.mediadecathlon.com/p1705464/k$e806112d6dba25fa93f1f78ba745d90b/sq/Pack+planche+de+snowboard+piste+freeride+femme+Serenity+500.jpg'
 d.save!
-e = Equipment.new(owner: User.all.sample, title: "Chaussures de ski taille 37", material_category: "Chaussures de ski", location: "43 rue de Brissac, 49000 Angers", price_per_day: "15", details: "Etat OK.\nTrès bonne tenue au mollet.\nLe premier clapet sur la chaussure droite est un peu dur mais ça tiendra mieux une fois fermé!")
+e = Equipment.new(owner: User.all.sample, title: "Chaussures de ski taille 37", material_category: "Chaussures de ski", location: "43 rue de Brissac, 49000 Angers", price_per_day: "15", details: "Etat OK.\nTrès bonne tenue au mollet.\nPremier claper chaussure droite un peu dur")
 e.remote_picture_url ='https://glisshop-glisshop-fr-storage.omn.proximis.com/Imagestorage/imagesSynchro/735/735/da627020441361f04d0207e5d4df53f4f8bad06f_VH18DALBCHA004_0.jpeg'
 e.save!
 f = Equipment.new(owner: User.all.sample, title: "Ski de fonds", material_category: "Ski", location: "44 rue François 1er, 75008 Paris", price_per_day: "20", details: "Etat OK.\nQuelques rayures\nParfaits pour un débutant.")

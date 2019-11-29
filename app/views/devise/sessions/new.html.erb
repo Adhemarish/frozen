@@ -1,6 +1,6 @@
 
 <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="form-inputs mx-auto width-form mt-5">
+  <div class="login-form form-inputs mx-auto width-form mt-5">
     <h2 class="mb-3 text-center">Se connecter à votre compte</h2>
     <%= f.input :email,
                 required: false,
@@ -17,7 +17,7 @@
                 as: :boolean if devise_mapping.rememberable? %>
 
     <div class="form-actions">
-    <%= f.button :submit, "Se connecter", class:'btn btn-primary w-100' %>
+    <%= f.button :submit, "Se connecter", class:'btn btn-primary w-100 font-weight-bold' %>
     </div>
     <%= render "devise/shared/links" %>
   </div>

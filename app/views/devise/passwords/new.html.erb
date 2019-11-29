@@ -1,5 +1,6 @@
-<h2>Mot de passe oublié ?</h2>
+<h2 class="mdp-oublie">Mot de passe oublié ?</h2>
 
+<div class="sign-up-form form-inputs mx-auto width-form mt-5">
 <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
   <%= f.error_notification %>
 
@@ -10,9 +11,12 @@
                 input_html: { autocomplete: "email" } %>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Send me reset password instructions" %>
+  <div class="form-actions text-warning">
+    <%= f.button :submit, "Envoyez-moi les instructions de mise à jour du mot de passe" %>
   </div>
 <% end %>
 
-<%= render "devise/shared/links" %>
+<!-- <div>
+<%#= render "devise/shared/links" %>
+</div> -->
+</div>

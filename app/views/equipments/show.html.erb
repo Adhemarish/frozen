@@ -1,9 +1,9 @@
 <div class="container mt-5 align-items-top">
-  <div class="row ">
+  <div class="row">
     <div class="col-7">
       <div class="card card-show-equipment">
         <div class="photo-equipment-show mx-auto mt-2">
-          <%= cl_image_tag @equipment.picture, size: '300x300', class:"mx-auto" %>
+          <%= cl_image_tag @equipment.picture, size: '250x250', class:"mx-auto" %>
         </div>
         <div>
           <div class="row header border-top">
@@ -16,19 +16,18 @@
             </div>
           </div>
             <p class="card-category"><small class="text-muted"><%=@equipment.material_category%></small></p>
-            <p class="details text-justify"><%= raw @equipment.details.gsub(".", ".<br>") %></p>
-            <div class="row price-location">
-              <p class="price text-warning"><strong id="price_per_day"><%= @equipment.price_per_day %>€ / jour</strong></p>
-              <div class="location">
-                <%= image_tag 'location', height: 25, width: 25, crop: :fill %>
-                <p class="full-address"><%= @equipment.location %></p>
-              </div>
+            <div class="location">
+              <%= image_tag 'location', height: 25, width: 25, crop: :fill %>
+              <p class="full-address"><%= @equipment.location %></p>
             </div>
+            <p class="details text-justify"><%= raw @equipment.details.gsub(".", ".<br>") %></p>
+            <p class="price text-warning"><strong id="price_per_day"><%= @equipment.price_per_day %>€ / jour</strong></p>
         </div>
       </div>
     </div>
     <div class="col-5">
       <div class="right-part">
+
         <div class="map-show">
           <div
               id="map"
@@ -38,7 +37,7 @@
         </div>
 
         <div class="card form-booking">
-          <h2 class="title-form text-center mt-3">Demande de réservation</h2>
+          <h2 class="title-form text-center mt-2">Demande de réservation</h2>
           <div class="card-body">
             <div class="form-inputs">
               <%= simple_form_for [@equipment, @booking] do |f| %>
@@ -46,14 +45,14 @@
               <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
               <%= f.input :starting_date, as: :string, label: 'Date début location', required: false, input_html: {class: "datepicker"} %>
               <%= f.input :ending_date, as: :string, label: 'Date fin location',required: false, input_html: {class: "datepicker"} %>
-            </div>
-            <h6> Le coût total sera: <span id='total'></span></h6>
-            <div class="form-actions text-center">
-              <%= f.button :submit, "Soumettre votre réservation", class:'btn btn-flat-voir' %>
-            </div>
+              <div class="form-actions text-center">
+                <%= f.button :submit, "Soumettre votre réservation", class:'btn btn-flat-voir' %>
+              </div>
             <% end %>
+            </div>
           </div>
         </div>
+
      </div>
   </div>
 </div>
