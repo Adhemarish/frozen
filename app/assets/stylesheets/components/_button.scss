@@ -104,13 +104,14 @@
   border-radius: 50px;
 }
 
-.form-control:focus + .fa-search {
-  color: pink;
-}
 
 .btn.btn-flat-go {
   border-radius: 15px;
   width:100px;
+}
+
+.search-bar {
+  margin-top:10px;
 }
 
 .search-bar .btn {

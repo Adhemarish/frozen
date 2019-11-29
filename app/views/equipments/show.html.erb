@@ -17,7 +17,7 @@
           </div>
             <p class="card-category"><small class="text-muted"><%=@equipment.material_category%></small></p>
             <div class="location">
-              <%= image_tag 'location', height: 25, width: 25, crop: :fill %>
+              <%= image_tag 'location.svg', height: 25, width: 25, crop: :fill %>
               <p class="full-address"><%= @equipment.location %></p>
             </div>
             <p class="details text-justify"><%= raw @equipment.details.gsub(".", ".<br>") %></p>
