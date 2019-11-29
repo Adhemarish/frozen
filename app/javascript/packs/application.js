@@ -6,6 +6,9 @@ import "../components/totalPrice"
 
 import "../components/searchBar"
 
+import { initAutocomplete } from '../plugins/init_autocomplete.js'
+
 import { initMapbox } from '../plugins/init_mapbox';
 
 initMapbox();
+initAutocomplete();
